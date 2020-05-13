@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+
+#container {
+    width:100%; background-color:#eee;
+    & > section {
+        width:100%; height:800px;
+    }
+    #slideSection {
+        height:840px;
+        box-sizing:border-box;
+        .slide01 {
+            width:100%; height:420px; background-color:#f9dd91;
+        }
+        .slide02 {
+            width:100%; height:420px; background-color:#cc6e65;
+            @include boxSizing;
+        }
+
+    }
+    .slide03 {
+        background-color:#ccc; height:350px;
+    }
+}

@@ -1,6 +1,12 @@
-/* latin - LG Smart */
+/* Lato  */
 @import url("https://fonts.googleapis.com/css?family=Roboto:500&display=swap");
-@font-face { font-family: 'LatoBlack'; font-style: normal; font-weight: 300; src: url(../../fonts/.woff) format("woff"), url(../../fonts/.eot) format("eot"), url(../../fonts/.ttf) format("truetype"); }
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 300; src: url(../../fonts/LatoLight.woff) format("woff"), url(../../fonts/LatoLight.eot) format("eot"), url(../../fonts/LatoLight.ttf) format("truetype"); }
+
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; src: url(../../fonts/LatoRegular.woff) format("woff"), url(../../fonts/LatoRegular.eot) format("eot"), url(../../fonts/LatoRegular.ttf) format("truetype"); }
+
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 600; src: url(../../fonts/LatoBold.woff) format("woff"), url(../../fonts/LatoBold.eot) format("eot"), url(../../fonts/LatoBold.ttf) format("truetype"); }
+
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 800; src: url(../../fonts/LatoBlack.woff) format("woff"), url(../../fonts/LatoBlack.eot) format("eot"), url(../../fonts/LatoBlack.ttf) format("truetype"); }
 
 /* latin - Roboto */
 /* reset css */
@@ -98,7 +104,7 @@ table { width: 100%; text-align: left; border-collapse: collapse; border-spacing
 /* Input - color setting */
 /* Button - color setting */
 /** BASE SETTING */
-header nav:after, header nav ul:after { content: " "; display: block; clear: both; }
+header nav:after, header nav ul:after, #container #slideSection .slide02 .cont ul:after { content: " "; display: block; clear: both; }
 
 @media only screen and (max-width: 1856px) { html { font-size: 20px !important; } }
 
@@ -122,13 +128,13 @@ header nav:after, header nav ul:after { content: " "; display: block; clear: bot
 
 body { -webkit-backface-visibility: hidden; }
 
-input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button { padding: 0; font-family: "LG Smart", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; outline: none; }
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button { padding: 0; font-family: "Lato", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; outline: none; }
 
 a { text-decoration: none; cursor: pointer; color: #1e1e1e; }
 
 a:link, a:visited, a:active, a:hover { text-decoration: none; }
 
-select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 20px; font-weight: 300; font-family: "LG Smart", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
+select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 20px; font-weight: 300; font-family: "Lato", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
 
 select[type="checkbox"], input[type="checkbox"], button[type="checkbox"], textarea[type="checkbox"] { -webkit-appearance: checkbox; }
 
@@ -136,7 +142,7 @@ select[type="radio"], input[type="radio"], button[type="radio"], textarea[type="
 
 select::-ms-expand, input::-ms-expand, button::-ms-expand, textarea::-ms-expand { display: none; }
 
-html, body { font-family: "LG Smart", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 300; color: #1e1e1e; word-break: keep-all; line-height: 1; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
+html, body { font-family: "Lato", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 300; color: #1e1e1e; word-break: keep-all; line-height: 1; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
 
 strong, h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 
@@ -166,7 +172,11 @@ header > div.donate_btn { float: right; }
 
 #container #slideSection .slide01 { width: 100%; height: 420px; background-color: #f9dd91; }
 
-#container #slideSection .slide02 { width: 100%; height: 420px; background-color: #cc6e65; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#container #slideSection .slide02 { padding: 0 0 0 150px; width: 100%; height: 420px; background-color: #cc6e65; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+#container #slideSection .slide02 .cont { width: 100%; background-color: #ccc; }
+
+#container #slideSection .slide02 .cont ul li { width: 200px; height: 200px; background-color: #221567; float: left; margin: 0 0 0 20px; cursor: pointer; }
 
 #container .slide03 { background-color: #ccc; height: 350px; }
 

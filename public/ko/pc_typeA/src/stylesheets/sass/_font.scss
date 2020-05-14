@@ -1,12 +1,39 @@
 
-/* latin - LG Smart */
+/* Lato  */
 @font-face {
-	font-family: 'LatoBlack';
+	font-family: 'Lato';
 	font-style: normal;
 	font-weight: 300;
-	src:url(../../fonts/.woff) format('woff'),
-	url(../../fonts/.eot) format('eot'),
-	url(../../fonts/.ttf) format('truetype');
+	src:url(../../fonts/LatoLight.woff) format('woff'),
+	url(../../fonts/LatoLight.eot) format('eot'),
+	url(../../fonts/LatoLight.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src:url(../../fonts/LatoRegular.woff) format('woff'),
+	url(../../fonts/LatoRegular.eot) format('eot'),
+	url(../../fonts/LatoRegular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 600;
+	src:url(../../fonts/LatoBold.woff) format('woff'),
+	url(../../fonts/LatoBold.eot) format('eot'),
+	url(../../fonts/LatoBold.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 800;
+	src:url(../../fonts/LatoBlack.woff) format('woff'),
+	url(../../fonts/LatoBlack.eot) format('eot'),
+	url(../../fonts/LatoBlack.ttf) format('truetype');
 }
 
 /* latin - Roboto */

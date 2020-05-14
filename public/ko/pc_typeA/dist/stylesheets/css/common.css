@@ -104,7 +104,7 @@ table { width: 100%; text-align: left; border-collapse: collapse; border-spacing
 /* Input - color setting */
 /* Button - color setting */
 /** BASE SETTING */
-header nav:after, header nav ul:after, #container #slideSection .slide02 .cont ul:after { content: " "; display: block; clear: both; }
+header nav:after, header nav ul:after, #container #slideSection .slide02 .slide_container ul:after { content: " "; display: block; clear: both; }
 
 @media only screen and (max-width: 1856px) { html { font-size: 20px !important; } }
 
@@ -172,11 +172,13 @@ header > div.donate_btn { float: right; }
 
 #container #slideSection .slide01 { width: 100%; height: 420px; background-color: #f9dd91; }
 
-#container #slideSection .slide02 { padding: 0 0 0 150px; width: 100%; height: 420px; background-color: #cc6e65; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#container #slideSection .slide02 { width: 100%; height: 420px; padding: 0 0 0 150px; background-color: #cc6e65; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-#container #slideSection .slide02 .cont { width: 100%; background-color: #ccc; }
+#container #slideSection .slide02 .slide_container { width: 100%; background-color: #ccc; }
 
-#container #slideSection .slide02 .cont ul li { width: 200px; height: 200px; background-color: #221567; float: left; margin: 0 0 0 20px; cursor: pointer; }
+#container #slideSection .slide02 .slide_container ul li { width: 200px; height: 200px; background-color: #221567; float: left; margin: 0 0 0 20px; cursor: pointer; color: #fff; }
+
+#container #slideSection .slide02 .slide_container ul li:first-child { width: 600px; height: 400px; }
 
 #container .slide03 { background-color: #ccc; height: 350px; }
 

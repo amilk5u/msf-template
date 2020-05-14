@@ -29,8 +29,4 @@ $window.load(function () {
     main();
     layout();
     scrollEvent();
-    cinemaJS();
-    gamingJS();
-    lifeJS();
-    lineUpJS();
 });

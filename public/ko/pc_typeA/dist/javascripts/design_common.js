@@ -29,10 +29,6 @@ $window.load(function () {
     main();
     layout();
     scrollEvent();
-    cinemaJS();
-    gamingJS();
-    lifeJS();
-    lineUpJS();
 });
 function layout() {
     var $allNav = $("#allNav");
@@ -61,106 +57,52 @@ function layout() {
         TweenMax.to($navDimmed, .3, {display:"none", opacity:0});
         TweenMax.to($gnbNav, .3, {x:"-100%", ease:esStep});
     }
-
-    //cookie
-    var $cookieAll = $("#cookieAllPc"),
-        $cookieTop = $cookieAll.find(".cookie_top"),
-        $cookieBottom = $cookieAll.find(".cookie_bottom"),
-        $cookieAllAgree = $cookieAll.find("#allAgreeBtn"),
-        $cookieDetailOpen = $cookieAll.find("#detailOpenBtn"),
-        $cookieChangeWrap = $cookieAll.find(".change_wrap"),
-        $cookieChangeBtn = $cookieAll.find("#cookieChange");
-    var $cookieClose = $cookieAll.find("#cookieClose");
-    var $cookieSave = $cookieAll.find("#cookieSave");
-
-    var $functionalAgree = document.getElementById("functionalAgree"),
-        $socialAgree = document.getElementById("socialAgree"),
-        $analysisAgree = document.getElementById("analysisAgree"),
-        $advertisingAgree = document.getElementById("advertisingAgree");
-    $cookieChangeBtn.click(function () {
-        $cookieTop.css({display:"block"});
-        TweenMax.to($cookieChangeWrap, .3, {height:0});
-        TweenMax.to($cookieAll, .5, {height:110});
-    });
-
-    //SAVE PREFERENCES 버튼 클릭시
-    $cookieDetailOpen.click(function () {
-        var _this = $(this);
-        if(!_this.hasClass("active")){
-            _this.addClass("active");
-            $cookieBottom.css({display:"block"});
-            TweenMax.to($cookieAll, .5, {height:410});
-        } else {
-            _this.removeClass("active");
-            $cookieBottom.css({display:"none"});
-            TweenMax.to($cookieAll, .5, {height:110});
-        }
-    });
-
-    $cookieClose.click(function () {
-        $cookieBottom.css({display:"none"});
-        $cookieTop.css({display:"none"});
-        $cookieDetailOpen.removeClass("active");
-        TweenMax.to($cookieAll, .3, {height:50});
-        TweenMax.to($cookieChangeWrap, .5, {height:50});
-    });
-
-    $cookieAllAgree.click(function(){
-        if(!$cookieAll.find(".cookie_bottom ol input[type=checkbox]").is(":checked")){
-            $cookieAll.find(".cookie_bottom ol input[type=checkbox]").attr("checked", true);
-        } else {
-            $cookieAll.find(".cookie_bottom ol input[type=checkbox]").attr("checked", false);
-        }
-    });
-
-    $cookieSave.click(function(){
-        if($functionalAgree.checked === true){
-            setCookie("functionalCookie", "Y", 365);
-        } else {
-            setCookie("functionalCookie", "N", 365);
-        }
-        if($socialAgree.checked === true){
-            setCookie("socialCookie", "Y", 365);
-        } else {
-            setCookie("socialCookie", "N", 365);
-        }
-        if($analysisAgree.checked === true){
-            setCookie("analysisCookie", "Y", 365);
-        } else {
-            setCookie("analysisCookie", "N", 365);
-        }
-        if($advertisingAgree.checked === true){
-            setCookie("advertisingCookie", "Y", 365);
-        } else {
-            setCookie("advertisingCookie", "N", 365);
-        }
-        window.location.reload();
-    });
-    if(getCookie("functionalCookie") === "Y"){
-        $functionalAgree.checked = true;
-    }
-    if(getCookie("socialCookie") === "Y"){
-        $socialAgree.checked = true;
-    }
-    if(getCookie("analysisCookie") === "Y"){
-        $analysisAgree.checked = true;
-    }
-    if(getCookie("advertisingCookie") === "Y"){
-        $advertisingAgree.checked = true;
-    }
 }
-var swiper = new Swiper('.swiper-container.slide03', {
-    slidesPerView: 4,
-    spaceBetween: 30,
-    centeredSlides: true,
-    pagination: {
-        clickable: true,
-    },
-});
+function main() {
+
+    var $container = $("#container");
+    var $slideSection = $container.find("#slideSection");
+
+    var $slide01 = $slideSection.find(".slide01");
+    var $slide02 = $slideSection.find(".slide02");
+    var $slide03 = $slideSection.find(".slide03");
+
+    var $slide02_cont = $slide02.find("slide_container");
+    var $slide02Li = $slide02_cont.find("li");
+
+    var swiper = new Swiper('.swiper-container.slide03', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: true,
+        pagination: {
+            clickable: true,
+        },
+    });
 
 
 
 
+    /*
+    *  1. li 중 1번(0번)을 클릭시 index 0을 뱉어 낸다.
+    *  2. li 중
+    *
+    *
+    */
+
+
+    function test(index) {
+
+        var _this = $(this);
+        var _index = _this.index();
+
+        $slide02Li.on("click",function(){
+            console.log(_index);
+        });
+    }
+    test(1);
+
+
+}
 function scrollEvent() {
     var $subVisual = $("#subVisual");
     $(window).scroll(function () {

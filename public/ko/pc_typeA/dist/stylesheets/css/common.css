@@ -1,5 +1,5 @@
 /* Lato  */
-@import url("https://fonts.googleapis.com/css?family=Roboto:500&display=swap");
+@import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css");
 @font-face { font-family: 'Lato'; font-style: normal; font-weight: 300; src: url(../../fonts/LatoLight.woff) format("woff"), url(../../fonts/LatoLight.eot) format("eot"), url(../../fonts/LatoLight.ttf) format("truetype"); }
 
 @font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; src: url(../../fonts/LatoRegular.woff) format("woff"), url(../../fonts/LatoRegular.eot) format("eot"), url(../../fonts/LatoRegular.ttf) format("truetype"); }
@@ -8,7 +8,7 @@
 
 @font-face { font-family: 'Lato'; font-style: normal; font-weight: 800; src: url(../../fonts/LatoBlack.woff) format("woff"), url(../../fonts/LatoBlack.eot) format("eot"), url(../../fonts/LatoBlack.ttf) format("truetype"); }
 
-/* latin - Roboto */
+/* latin - Noto Sans KR */
 /* reset css */
 article, aside, footer, header, nav, section { display: block; }
 
@@ -128,13 +128,13 @@ header nav:after, header nav ul:after, footer > div .container:after, #container
 
 body { -webkit-backface-visibility: hidden; }
 
-input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button { padding: 0; font-family: "Lato", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; outline: none; }
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button { padding: 0; font-family: "Lato", "Noto Sans KR", AppleGothic, Arial, Helvetica, sans-serif; outline: none; }
 
 a { text-decoration: none; cursor: pointer; color: #1e1e1e; }
 
 a:link, a:visited, a:active, a:hover { text-decoration: none; }
 
-select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 20px; font-weight: 300; font-family: "Lato", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
+select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 20px; font-weight: 300; font-family: "Lato", "Noto Sans KR", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
 
 select[type="checkbox"], input[type="checkbox"], button[type="checkbox"], textarea[type="checkbox"] { -webkit-appearance: checkbox; }
 
@@ -142,9 +142,9 @@ select[type="radio"], input[type="radio"], button[type="radio"], textarea[type="
 
 select::-ms-expand, input::-ms-expand, button::-ms-expand, textarea::-ms-expand { display: none; }
 
-html, body { font-family: "Lato", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 300; color: #1e1e1e; word-break: keep-all; line-height: 1; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
+html, body { font-family: "Lato", "Noto Sans KR", AppleGothic, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 300; color: #1e1e1e; word-break: keep-all; line-height: 1; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
 
-strong, h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+strong, h1, h2, h3, h4, h5, h6 { font-weight: 800; }
 
 label, button { cursor: pointer; }
 
@@ -163,9 +163,9 @@ header nav ul li a { font-size: 18px; }
 header > div.donate_btn { float: right; }
 
 /* footer */
-footer { width: 100%; height: 182px; background-color: #181b2e; letter-spacing: normal; }
+footer { width: 100%; background-color: #181b2e; letter-spacing: normal; }
 
-footer > div .container { width: 1200px; margin: 0 auto; }
+footer > div .container { width: 1600px; margin: 0 auto; }
 
 footer .fc1 { height: 85px; }
 
@@ -198,6 +198,10 @@ footer .fc1 .container .donate_info dl dt { display: inline-block; font-size: 15
 footer .fc1 .container .donate_info dl dd { display: inline-block; font-size: 15px; font-weight: 400; color: #fff; }
 
 footer .fc2 .address { height: 100%; float: left; line-height: 97px; font-size: 12px; color: #898a8b; }
+
+footer .fc2 .address span { margin: 0 0 0 13px; }
+
+footer .fc2 .address span:first-child { margin: 0; }
 
 footer .fc2 .donate_btn_footer { width: 196px; height: 44px; float: right; margin-top: 26px; }
 

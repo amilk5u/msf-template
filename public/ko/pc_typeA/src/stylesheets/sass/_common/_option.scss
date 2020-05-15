@@ -2,7 +2,7 @@
 
 /* Font style setting */
 $lato:"Lato", Arial, Apple SD Gothic Neo, sans-serif;
-$dinbol:"dinbol", Arial, Apple SD Gothic Neo, sans-serif;
+$roboto:"Roboto", Arial, Apple SD Gothic Neo, sans-serif;
 
 /* Point color setting */
 $black:#000;
@@ -49,13 +49,13 @@ $btn-black:$black;
 /**
  * BASE SETTING
  */
-$base-font:"Lato", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
+$base-font:"Lato", "Noto Sans KR", AppleGothic, Arial, Helvetica, sans-serif;
 $base-font-size:20px;
 $base-font-color:$gray1;
 
 $letter-spacing:0;
 
 $light:300;
-$regular:500;
+$regular:400;
 $semibold:600;
-$bold:700;
+$bold:800;

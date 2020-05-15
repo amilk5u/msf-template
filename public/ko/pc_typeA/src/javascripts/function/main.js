@@ -20,6 +20,8 @@ function main() {
     });
 
 
+
+
     /*
     *  1. li 중 1번(0번)을 클릭시 index 0을 뱉어 낸다.
     *  2. li 중
@@ -33,7 +35,10 @@ function main() {
         var _index = _this.index();
 
         $slide02Li.on("click",function(){
+
+            console.log(_this);
         });
+
 
     }
     test();

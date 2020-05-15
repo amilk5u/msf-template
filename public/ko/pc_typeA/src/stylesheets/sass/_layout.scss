@@ -1,6 +1,4 @@
 @charset "UTF-8";
-
-
 header {
    width:100%;
    height:140px; display:flex; padding:0 50px;
@@ -24,6 +22,64 @@ header {
    }
    & > div.donate_btn {float:right;}
 }
+/* footer */
+footer {
+   width:100%; height:182px; background-color:#181b2e; letter-spacing:normal;
+   & > div {
+      .container {
+         width:1200px; margin:0 auto;
+         &:after {
+            @extend %clearfix;
+         }
+      }
+   }
+   .fc1 {
+      height:85px;
+      .container {
+         border-bottom:1px solid rgba(255, 255, 255, 0.1);
+         .logo_footer {
+            width:140px; float:left; padding-top:20px; margin-right:45px; text-align:left;
+            img { width:100%; }
+         }
+         ul.footer_menu {
+            float:left;
+            li {
+               height:100%; display:inline-block; padding:0 15px; color:#c5c5c5;
+               a:hover { border-bottom:2px solid #ed1c24; }
+               a:link, a:visited { padding-bottom:10px; line-height:85px; font-size:14px; font-weight:300; color:#e8e8e8; }
+            }
+         }
+         .donate_info {
+            height:100%; float:right;
+            dl {
+               height:100%; float:left; padding-left:16px; line-height:85px;
+               &:first-child { padding-right:18px; }
+               &.account {
+                  position:relative;
+                  &:after { width:1px; height:11px; content:""; display:block; position:absolute; left:0; top:39px; background-color:#474b4e; }
+               }
+               dt { display:inline-block; font-size:15px; color:#ffe043; margin-right:10px; }
+               dd { display:inline-block; font-size:15px; font-weight:400; color:#fff; }
+            }
+         }
+      }
+   }
+   .fc2 {
+      .address { height:100%; float:left; line-height:97px; font-size:12px; color:#898a8b; }
+      .donate_btn_footer {
+         width:196px; height:44px; float:right; margin-top:26px;
+         a {
+            width:100%; height:100%; display:block; border-radius:44px; background-color:#ed1c24;
+            text-align:center; line-height:44px; font-size:15px; font-weight:500; color:#fff;
+            &:after {
+               width:6px; height:10px; content:""; display:inline-block; margin-left:6px;
+               background:url(../../images/common/footer_btn_dir.png) no-repeat 0 0; background-size:100% 100%;
+            }
+         }
+      }
+   }
+}
 .donate_btn {
    a {width:190px; padding:20px 0; display:inline-block; background-color:$red; color:#fff; font-size:16px; border-radius:100px; text-align:center; }
 }
+

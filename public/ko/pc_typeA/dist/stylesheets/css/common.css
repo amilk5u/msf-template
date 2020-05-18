@@ -104,7 +104,7 @@ table { width: 100%; text-align: left; border-collapse: collapse; border-spacing
 /* Input - color setting */
 /* Button - color setting */
 /** BASE SETTING */
-header nav:after, header nav ul:after, footer > div .container:after, #container #slideSection .slide02 .slide_container ul:after { content: " "; display: block; clear: both; }
+header nav:after, header nav ul:after, footer > div .container:after, footer .fc1 .container .donate_info:after, #container #slideSection .slide02 .slide_container ul:after { content: " "; display: block; clear: both; }
 
 @media only screen and (max-width: 1856px) { html { font-size: 20px !important; } }
 
@@ -165,27 +165,25 @@ header > div.donate_btn { float: right; }
 /* footer */
 footer { width: 100%; background-color: #181b2e; letter-spacing: normal; }
 
-footer > div .container { width: 1600px; margin: 0 auto; }
+footer > div .container { width: 100%; padding: 0 160px; margin: 0 auto; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-footer .fc1 { height: 85px; }
-
-footer .fc1 .container { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+footer .fc1 .container { height: 87px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 
 footer .fc1 .container .logo_footer { width: 140px; float: left; padding-top: 20px; margin-right: 45px; text-align: left; }
 
 footer .fc1 .container .logo_footer img { width: 100%; }
 
-footer .fc1 .container ul.footer_menu { float: left; }
+footer .fc1 .container ul.footer_menu { float: left; padding: 30px 0 0; }
 
 footer .fc1 .container ul.footer_menu li { height: 100%; display: inline-block; padding: 0 15px; color: #c5c5c5; }
 
 footer .fc1 .container ul.footer_menu li a:hover { border-bottom: 2px solid #ed1c24; }
 
-footer .fc1 .container ul.footer_menu li a:link, footer .fc1 .container ul.footer_menu li a:visited { padding-bottom: 10px; line-height: 85px; font-size: 14px; font-weight: 300; color: #e8e8e8; }
+footer .fc1 .container ul.footer_menu li a:link, footer .fc1 .container ul.footer_menu li a:visited { padding-bottom: 10px; font-size: 14px; font-weight: 300; color: #e8e8e8; }
 
 footer .fc1 .container .donate_info { height: 100%; float: right; }
 
-footer .fc1 .container .donate_info dl { height: 100%; float: left; padding-left: 16px; line-height: 85px; }
+footer .fc1 .container .donate_info dl { float: left; padding: 32px 0 0 16px; }
 
 footer .fc1 .container .donate_info dl:first-child { padding-right: 18px; }
 
@@ -197,17 +195,17 @@ footer .fc1 .container .donate_info dl dt { display: inline-block; font-size: 15
 
 footer .fc1 .container .donate_info dl dd { display: inline-block; font-size: 15px; font-weight: 400; color: #fff; }
 
-footer .fc2 .address { height: 100%; float: left; line-height: 97px; font-size: 12px; color: #898a8b; }
+footer .fc2 .address { height: 100%; float: left; padding: 40px 0; font-size: 14px; color: #90929b; }
 
-footer .fc2 .address span { margin: 0 0 0 13px; }
+footer .fc2 .address span { margin: 0 0 0 13px; font-weight: 400; }
 
 footer .fc2 .address span:first-child { margin: 0; }
 
-footer .fc2 .donate_btn_footer { width: 196px; height: 44px; float: right; margin-top: 26px; }
+footer .fc2 .donate_btn { float: right; padding: 25px 0 0; }
 
-footer .fc2 .donate_btn_footer a { width: 100%; height: 100%; display: block; border-radius: 44px; background-color: #ed1c24; text-align: center; line-height: 44px; font-size: 15px; font-weight: 500; color: #fff; }
+footer .fc2 .donate_btn a { width: 200px; padding: 15px 0; border-radius: inherit; background-color: #cb0007; }
 
-footer .fc2 .donate_btn_footer a:after { width: 6px; height: 10px; content: ""; display: inline-block; margin-left: 6px; background: url(../../images/common/footer_btn_dir.png) no-repeat 0 0; background-size: 100% 100%; }
+footer .fc2 .donate_btn a:after { width: 6px; height: 10px; content: ""; display: inline-block; margin-left: 6px; background: url(../../images/common/footer_btn_dir.png) no-repeat 0 0; background-size: 100% 100%; }
 
 .donate_btn a { width: 190px; padding: 20px 0; display: inline-block; background-color: #f70707; color: #fff; font-size: 16px; border-radius: 100px; text-align: center; }
 
@@ -234,7 +232,7 @@ input[type=text], textarea, select { outline: none; -webkit-transition: border-c
 
 input[type=text]:focus, textarea:focus, select:focus { border-color: #646668 !important; }
 
-::selection { background: #646668; color: #fff; text-shadow: none; }
+::selection { background: #000; color: #fff; text-shadow: none; }
 
 ::-moz-selection { background: #646668; color: #fff; text-shadow: none; }
 

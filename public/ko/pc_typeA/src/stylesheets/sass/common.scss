@@ -13,7 +13,7 @@ select {
     @include transition(border-color, .2s);
     &:focus { border-color:$gray2 !important;}
 }
-::selection { background:$gray2; color:$white; text-shadow:none; }
+::selection { background:#000; color:$white; text-shadow:none; }
 ::-moz-selection { background:$gray2; color:$white; text-shadow:none; }
 img { vertical-align:top; image-rendering:-webkit-optimize-contrast;}
 caption { width:1px; height:1px; overflow:hidden; margin:-1px;}

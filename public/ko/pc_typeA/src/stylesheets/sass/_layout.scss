@@ -27,32 +27,33 @@ footer {
    width:100%; background-color:#181b2e; letter-spacing:normal;
    & > div {
       .container {
-         width:1600px; margin:0 auto;
+         width:100%; padding:0 160px; margin:0 auto;
+         @include boxSizing;
          &:after {
             @extend %clearfix;
          }
       }
    }
    .fc1 {
-      height:85px;
       .container {
-         border-bottom:1px solid rgba(255, 255, 255, 0.1);
+         height:87px; border-bottom:1px solid rgba(255, 255, 255, 0.1);
          .logo_footer {
             width:140px; float:left; padding-top:20px; margin-right:45px; text-align:left;
             img { width:100%; }
          }
          ul.footer_menu {
-            float:left;
+            float:left; padding:30px 0 0;
             li {
                height:100%; display:inline-block; padding:0 15px; color:#c5c5c5;
                a:hover { border-bottom:2px solid #ed1c24; }
-               a:link, a:visited { padding-bottom:10px; line-height:85px; font-size:14px; font-weight:300; color:#e8e8e8; }
+               a:link, a:visited { padding-bottom:10px; font-size:14px; font-weight:300; color:#e8e8e8; }
             }
          }
          .donate_info {
             height:100%; float:right;
+            @extend %clearfix;
             dl {
-               height:100%; float:left; padding-left:16px; line-height:85px;
+               float:left; padding:32px 0 0 16px;
                &:first-child { padding-right:18px; }
                &.account {
                   position:relative;
@@ -66,17 +67,16 @@ footer {
    }
    .fc2 {
       .address {
-         height:100%; float:left; line-height:97px; font-size:12px; color:#898a8b;
+         height:100%; float:left; padding:40px 0; font-size:14px; color:#90929b;
          span {
-            margin:0 0 0 13px;
+            margin:0 0 0 13px; font-weight:$regular;
             &:first-child {margin:0;}
          }
       }
-      .donate_btn_footer {
-         width:196px; height:44px; float:right; margin-top:26px;
+      .donate_btn {
+         float:right; padding:25px 0 0;
          a {
-            width:100%; height:100%; display:block; border-radius:44px; background-color:#ed1c24;
-            text-align:center; line-height:44px; font-size:15px; font-weight:500; color:#fff;
+            width:200px; padding:15px 0; border-radius:inherit; background-color:#cb0007;
             &:after {
                width:6px; height:10px; content:""; display:inline-block; margin-left:6px;
                background:url(../../images/common/footer_btn_dir.png) no-repeat 0 0; background-size:100% 100%;

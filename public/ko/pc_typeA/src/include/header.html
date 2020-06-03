@@ -8,7 +8,7 @@
    <meta name="title">
    <meta name="Description">
    <meta name="Keywords">
-   <meta name="Author" content="LG OLED AI">
+   <meta name="Author" content="">
    <meta name="robots" content="ALL">
 
    <meta property="og:title" content="국경없는의사회｜">
@@ -18,27 +18,30 @@
    <link rel="shortcut icon" href="https://www.msf.or.kr/sites/default/files/favicon.png"/>
    <link rel="apple-touch-icon" href="https://www.msf.or.kr/sites/default/files/favicon.png"/>
    <link rel="icon" href="https://www.msf.or.kr/sites/default/files/favicon.png"/>
-
    <link rel="stylesheet" href="../../stylesheets/css/common.css">
-   <script src="../../javascripts/jquery-1.8.2.min.js"></script>
 </head>
 <body>
 <div class="wrap">
    <!--header-->
    <header>
       <h1 id="logo">
-         <img src="../../images/common/logo.jpg" alt="logo image">
+         <a href="">
+            <img src="../../images/common/logo.jpg" alt="logo image">
+         </a>
       </h1>
       <nav>
-         <ul>
-            <li><a href="#">코로나19긴급구호</a></li>
-            <li><a href="#">활동원칙</a></li>
-            <li><a href="#">후원캠페인</a></li>
-            <li><a href="#">후원효과</a></li>
-            <li><a href="#">현장소식</a></li>
+         <ul id="myMenu">
+            <li data-menuanchor="Page01" class="active"><a href="#Page01">코로나<em>19</em>긴급구호</a></li>
+            <li data-menuanchor="Page02"><a href="#Page02">활동원칙</a></li>
+            <li data-menuanchor="Page03"><a href="#Page03">후원캠페인</a></li>
+            <li data-menuanchor="Page04"><a href="#Page04">후원효과</a></li>
+            <li data-menuanchor="Page05"><a href="#Page05">현장소식</a></li>
          </ul>
       </nav>
       <div class="donate_btn">
          <a href="#">지금 후원하기</a>
       </div>
+      <a href="#Page01" data-menuanchor="Page01" class="top_btn">
+         <span>TOP</span>
+      </a>
    </header>

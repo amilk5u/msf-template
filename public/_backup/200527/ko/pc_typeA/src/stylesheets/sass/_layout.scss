@@ -1,0 +1,127 @@
+@charset "UTF-8";
+header {
+   width:100%; height:120px; padding:0 50px; background-color:#eee; position:fixed; z-index:99; top:0; opacity:.9;
+   @include boxSizing;
+   @extend %clearfix;
+   #logo {
+      width:208px; height:62px; padding:27px 0 0; float:left;
+      img { width:100%; }
+   }
+   nav {
+      width:725px; padding:54px 0 0; position:absolute; left:50%;
+      @include translate(-50%, 0);
+      ul#myMenu {
+         display:inline-block;
+         @extend %clearfix;
+         li {
+            float:left; padding:0 36px;
+            em { padding:0 5px 0 0; font-weight:600; }
+            &:hover a {
+               font-weight:$medium; color:$red;
+            }
+            &.active a {
+               font-weight:$medium; color:$red;
+               &:after { width:100%; height:2px; content:""; display:block; position:absolute; bottom:-10px; z-index:-1; background-color:$red; }
+            }
+            a { font-size:17px; font-weight:$regular; position:relative; }
+         }
+      }
+   }
+   .donate_btn { padding:37px 0 0; float:right; }
+   .top_btn {
+      width:78px; height:78px; position:fixed; bottom:30px; right:50px; border:1px solid #eceeef; border-radius:80px;
+      background-color:$white; box-shadow:0 12px 20px #e0e0e0; padding:20px 0 0;
+      @include boxSizing;
+      span {
+         display:inline-block; font-weight:$bold; font-size:12px;
+         &:before,
+         &:after { content:""; display:block; position:absolute; }
+         &:before { width:8px; height:8px; top:22px; left:33px; border:2px solid $red; transform:rotate(45deg); border-bottom:0; border-right:0; }
+         &:after { width:2px; height:15px; top:22px; left:37px; background-color:$red; }
+      }
+   }
+   //1600
+   @include pc-a() {
+      padding:0 45px;
+   }
+   //1440
+   @include pc-b() {
+      height:100px; padding:0 40px;
+      #logo { width:192px; height:58px; padding:23px 0 0; }
+      nav { padding:48px 0 0; }
+      .donate_btn {
+         padding:31px 0 0;
+         a { width:172px; padding:17px 0; }
+      }
+   }
+   @include pc-c() {
+      padding:0 33px;
+   }
+}
+/* footer */
+.footer {
+   width:100%; background-color:#181b2e; letter-spacing:normal;
+   & > div {
+      .contain {
+         width:85%; min-width:1220px; margin:0 auto;
+         @include boxSizing;
+      }
+   }
+   .fc1 {
+      .contain {
+         height:87px; border-bottom:1px solid rgba(255, 255, 255, 0.1);
+         .logo_footer {
+            width:140px; float:left; padding:20px 0 0; margin:0 45px 0 0; text-align:left;
+            img { width:100%; }
+         }
+         ul.footer_menu {
+            float:left; padding:36px 0 0;
+            li {
+               height:100%; display:inline-block; padding:0 15px; color:#c5c5c5;
+               a:hover { border-bottom:2px solid #ed1c24; }
+               a:link, a:visited { padding:0 0 10px; font-size:14px; font-weight:300; color:#e8e8e8; }
+            }
+         }
+         .donate_info {
+            height:100%; float:right;
+            @extend %clearfix;
+            dl {
+               float:left; padding:32px 0 0 16px;
+               &:first-child { padding-right:18px; }
+               &.account {
+                  position:relative;
+                  &:after { width:1px; height:11px; content:""; display:block; position:absolute; left:0; top:39px; background-color:#474b4e; }
+               }
+               dt { display:inline-block; font-size:15px; color:#ffe043; margin-right:10px; }
+               dd { display:inline-block; font-size:15px; font-weight:400; color:#fff; }
+            }
+         }
+      }
+   }
+   .fc2 {
+      .address {
+         height:100%; float:left; padding:40px 0; font-size:14px; color:#90929b;
+         span {
+            margin:0 0 0 13px; font-weight:$regular;
+            &:first-child {margin:0;}
+         }
+      }
+      .donate_btn {
+         float:right; padding:25px 0 0;
+         a {
+            width:200px; padding:15px 0; border-radius:inherit; background-color:#cb0007;
+            &:after {
+               width:6px; height:10px; content:""; display:inline-block; margin-left:6px;
+               background:url(../../images/common/footer_btn_dir.png) no-repeat 0 0; background-size:100% 100%;
+            }
+         }
+      }
+   }
+   //1600
+   @include pc-a() {
+      & > div {
+         .contain { width:95%; }
+      }
+   }
+}
+

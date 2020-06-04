@@ -1228,7 +1228,7 @@
                &:before { display:none; }
                .box_wrap {
                   position:absolute; left:50%; top:calc(50% + 50px);
-                  @include transform(translate(0, -50%));
+                  @include transform(translate(-50%, -50%));
                }
                .title_wrap {
                   .img_box { display:none; }

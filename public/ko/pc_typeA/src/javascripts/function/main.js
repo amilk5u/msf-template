@@ -11,7 +11,6 @@ function main() {
         if( winW >= 1440 && ($fullpage.hasClass("ver2")) ) {
             console.log("큼");
             $mainVisual.removeClass("section");
-
         }else if( winW <= 1440 && ($fullpage.hasClass("con_ver2")) ){
             console.log("작을때");
             $mainVisual.addClass("section");
@@ -30,16 +29,28 @@ function main() {
         onLeave: function (origin, destination, direction) {
             var leavingSection = this;
 
-            if (origin === 4 && direction === 'down') {
-                counter();
-            } else if (origin === 6 && direction === 'up') {
-                counter();
+            if( winW >= 1440 && ($fullpage.hasClass("ver2")) ) {
+                console.log("ver2 일때 1440이상");
+                if (origin === 3 && direction === 'down') {
+                    counter();
+                } else if (origin === 5 && direction === 'up') {
+                    counter();
+                }
+            }else {
+                console.log("ver2 아닐때");
+                if (origin === 4 && direction === 'down') {
+                    counter();
+                } else if (origin === 6 && direction === 'up') {
+                    counter();
+                }
             }
+
             if (origin === 1) {
                 $top_btn.fadeIn();
             } else if (origin === 2 && direction === 'up') {
                 $top_btn.fadeOut();
             }
+
             if (origin === 8 && direction === 'down') {
                 TweenMax.to($top_btn, .5, {bottom: 220, ease: esStep});
             } else if (origin === 9 && direction === 'up') {

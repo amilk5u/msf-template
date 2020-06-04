@@ -32,4 +32,26 @@
    url(../../fonts/LatoBlack.ttf) format("truetype");
 }
 /* Noto Sans KR */
-@import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css");
+@font-face {
+   font-family:"Noto Sans KR";
+   font-style:normal;
+   font-weight:400;
+   src:url(../../fonts/NotoSansKR_Regular.otf) format("opentype");
+}
+@font-face {
+   font-family:"Noto Sans KR";
+   font-style:normal;
+   font-weight:500;
+   src:url(../../fonts/NotoSansKR_Medium.otf) format("opentype");
+}
+@font-face {
+   font-family:"Noto Sans KR";
+   font-style:normal;
+   font-weight:600;
+   src:url(../../fonts/NotoSansKR_Bold.otf) format("opentype");
+}
+
+
+
+/* Noto Sans KR */
+//@import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css");

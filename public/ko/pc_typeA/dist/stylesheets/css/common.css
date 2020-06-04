@@ -1,5 +1,4 @@
 /* Lato  */
-@import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css");
 @font-face { font-family: "Lato"; font-style: normal; font-weight: 300; src: url(../../fonts/LatoLight.woff) format("woff"), url(../../fonts/LatoLight.eot) format("eot"), url(../../fonts/LatoLight.ttf) format("truetype"); }
 
 @font-face { font-family: "Lato"; font-style: normal; font-weight: 500; src: url(../../fonts/LatoRegular.woff) format("woff"), url(../../fonts/LatoRegular.eot) format("eot"), url(../../fonts/LatoRegular.ttf) format("truetype"); }
@@ -7,6 +6,13 @@
 @font-face { font-family: "Lato"; font-style: normal; font-weight: 600; src: url(../../fonts/LatoBold.woff) format("woff"), url(../../fonts/LatoBold.eot) format("eot"), url(../../fonts/LatoBold.ttf) format("truetype"); }
 
 @font-face { font-family: "Lato"; font-style: normal; font-weight: 700; src: url(../../fonts/LatoBlack.woff) format("woff"), url(../../fonts/LatoBlack.eot) format("eot"), url(../../fonts/LatoBlack.ttf) format("truetype"); }
+
+/* Noto Sans KR */
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 400; src: url(../../fonts/NotoSansKR_Regular.otf) format("opentype"); }
+
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 500; src: url(../../fonts/NotoSansKR_Medium.otf) format("opentype"); }
+
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 600; src: url(../../fonts/NotoSansKR_Bold.otf) format("opentype"); }
 
 /* Noto Sans KR */
 /* reset css */
@@ -154,7 +160,7 @@ header #logo { width: 208px; height: 62px; padding: 27px 0 0; float: left; }
 
 header #logo img { width: 100%; }
 
-header nav { width: 735px; padding: 54px 0 0; position: absolute; left: 50%; -webkit-transform: translate(-50%, 0); -moz-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); -o-transform: translate(-50%, 0); transform: translate(-50%, 0); }
+header nav { width: 740px; padding: 54px 0 0; position: absolute; left: 50%; -webkit-transform: translate(-50%, 0); -moz-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); -o-transform: translate(-50%, 0); transform: translate(-50%, 0); }
 
 header nav ul#myMenu { display: inline-block; }
 
@@ -178,7 +184,7 @@ header .top_btn:hover span:before { top: 20px; }
 
 header .top_btn:hover span:after { height: 17px; top: 20px; }
 
-header .top_btn span { padding: 27px 28px 0; display: inline-block; font-weight: 600; font-size: 12px; }
+header .top_btn span { padding: 27px 27px 0; display: inline-block; font-weight: 600; font-size: 12px; letter-spacing: 0; }
 
 header .top_btn span a { width: 100%; height: 100%; display: block; }
 
@@ -954,7 +960,7 @@ header .top_btn span:after { width: 2px; height: 15px; top: 22px; left: 37px; ba
 
 @media screen and (max-width: 1440px) { #fullpage .section#workInfo .con5 { padding: 100px 0 0; background-color: #fdfbf1; position: relative; }
   #fullpage .section#workInfo .con5:before { display: none; }
-  #fullpage .section#workInfo .con5 .box_wrap { position: absolute; left: 50%; top: calc(50% + 50px); -webkit-transform: translate(0, -50%); -moz-transform: translate(0, -50%); -ms-transform: translate(0, -50%); -o-transform: translate(0, -50%); transform: translate(0, -50%); }
+  #fullpage .section#workInfo .con5 .box_wrap { position: absolute; left: 50%; top: calc(50% + 50px); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
   #fullpage .section#workInfo .con5 .title_wrap .img_box { display: none; }
   #fullpage .section#workInfo .con5 .title_wrap .txt_box { width: 100%; text-align: center; padding: 0; }
   #fullpage .section#workInfo .con5 .title_wrap .txt_box h2 { width: auto; padding: 10px 0 0; font-size: 36px; letter-spacing: -2.5px; }

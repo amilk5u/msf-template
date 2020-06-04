@@ -1,0 +1,32 @@
+
+/* Lato  */
+
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src:url(../../fonts/LatoRegular.woff) format('woff'),
+	url(../../fonts/LatoRegular.eot) format('eot'),
+	url(../../fonts/LatoRegular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src:url(../../fonts/LatoBold.woff) format('woff'),
+	url(../../fonts/LatoBold.eot) format('eot'),
+	url(../../fonts/LatoBold.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	src:url(../../fonts/LatoBlack.woff) format('woff'),
+	url(../../fonts/LatoBlack.eot) format('eot'),
+	url(../../fonts/LatoBlack.ttf) format('truetype');
+}
+/* Noto Sans KR */
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');

@@ -15,7 +15,6 @@ function main() {
             console.log("작을때");
             $mainVisual.addClass("section");
         }else {
-            console.log("모두아님");
         }
     }
     ver2View();
@@ -44,40 +43,25 @@ function main() {
                     counter();
                 }
             }
-
             if (origin === 1) {
                 $top_btn.fadeIn();
             } else if (origin === 2 && direction === 'up') {
                 $top_btn.fadeOut();
             }
-
             if (origin === 8 && direction === 'down') {
                 TweenMax.to($top_btn, .5, {bottom: 220, ease: esStep});
             } else if (origin === 9 && direction === 'up') {
                 TweenMax.to($top_btn, .5, {bottom: 30, ease: esStep});
             }
         },
-
-        afterLoad: function (origin) {
-            var loadedSection = this;
-
-            //색인 사용
-            if (origin.index === 2) {
-                alert("Section 3 ended loading");
-            }
-
-            if (origin.anchor === 'Page05') {
-                alert("Section 2 ended loading");
-                console.log("123123131");
-            }
-        }
     });
-
 
     var $btn_play1 = $mainVisual.find(".btn_play"),
         $play1 = $btn_play1.find(".play"),
         $stop1 = $btn_play1.find(".stop");
 
+    var $maintype1 = $mainVisual.find(".container.type1"),
+        $maintype2 = $mainVisual.find(".container.type2");
 
     //visual_slide
     var swiper_visual = new Swiper('.swiper-container.visual_slide', {
@@ -95,20 +79,24 @@ function main() {
     $stop1.on("click", function () {
         $(this).removeClass("active");
         $play1.addClass("active");
-        // swiper_visual.autoplay.stop();
-        swiper_visual[0].autoplay.stop();
-        swiper_visual[1].autoplay.stop();
+        /* type1과 type2 에 type_1 이 포함 되어 있을때와 없을때  */
+        if( $maintype1.hasClass("type_1") && $maintype2.hasClass("type_1") ) {
+            swiper_visual[0].autoplay.stop();
+            swiper_visual[1].autoplay.stop();
+        }else {
+            swiper_visual.autoplay.stop();
+        }
     });
     $play1.on("click", function () {
         $(this).removeClass("active");
         $stop1.addClass("active");
-        // swiper_visual.autoplay.start();
-        swiper_visual[0].autoplay.start();
-        swiper_visual[1].autoplay.start();
+        if( $maintype1.hasClass("type_1") && $maintype2.hasClass("type_1") ) {
+            swiper_visual[0].autoplay.start();
+            swiper_visual[1].autoplay.start();
+        }else {
+            swiper_visual.autoplay.start();
+        }
     });
-
-
-
     var $videoInfo = $("#videoInfo"),
         $btn_play2 = $videoInfo.find(".btn_play"),
         $play2 = $btn_play2.find(".play"),
@@ -127,22 +115,16 @@ function main() {
             clickable: true,
         }
     });
-
     $stop2.on("click", function () {
         $(this).removeClass("active");
         $play2.addClass("active");
         swiper_video.autoplay.stop();
     });
-
     $play2.on("click", function () {
         $(this).removeClass("active");
         $stop2.addClass("active");
         swiper_video.autoplay.start();
     });
-
-
-
-
 
 
     // section 3 slide
@@ -172,7 +154,6 @@ function main() {
             }
         }
     });
-
 
     var $warehouse = $("#warehouse"),
         $txt_bg = $warehouse.find(".txt_bg"),
@@ -210,7 +191,6 @@ function main() {
             }
         }
     });
-
 
     function nextEffect(realIndex) {
         // story_box background images

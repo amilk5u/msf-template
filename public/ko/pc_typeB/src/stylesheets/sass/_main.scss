@@ -1,0 +1,1168 @@
+@charset "UTF-8";
+
+#wrap{
+  .donate_btn{
+    text-align: center;
+    a{
+      width: 182px;
+      margin: 0 auto 0;
+      font-size: 14px;
+      padding: 18px 0;
+    }
+  }
+  .underline{
+    position: relative;
+    display: inline-block;
+    letter-spacing: -2px;
+    strong{
+      display: inline-block;
+      position: relative;
+      top:0 ;
+      left: 0;
+      z-index: 1;
+      padding:  0 2px;
+    }
+  }
+  .underline::after{
+    display: block;
+    content:  " ";
+    width: 100%;
+    padding:2px 0;
+    margin: -2px 0 0;
+    background-color: $red;
+  }
+  & #mainVisual{
+    margin:0 0 55px;
+    .visual_swiper{
+      width: 100%;
+      height: 450px;
+      .swiper-slide{
+        img{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate(-50% , -50%);
+          width: 100%;
+          height: auto;
+        }
+      }
+      .txt_box{
+        position: absolute;
+        left: 20px;
+        bottom: 35px;
+        z-index: 1;
+        strong{
+          display: inline-block;
+          background-color: $red;
+          color: #fff;
+          font-size: 27px;
+          letter-spacing: -2px;
+          margin: 2px 0;
+          line-height: 1.2;
+          padding: 0 6px 0 4px;
+        }
+      }
+      .custom_pagination{
+        left: 20px;
+        bottom: 165px;
+        text-align: left;
+        .swiper-pagination-bullet{
+          opacity: 1;
+          background-color: transparent;
+          border:2px solid #fff;
+        }
+        .swiper-pagination-bullet-active{
+          background-color: #fff;
+        }
+      }
+    }
+    .donate_box{
+      width: 335px;
+      margin: 18px auto 0 ;
+      .list_block{
+        @extend %clearfix;
+        li:first-child{
+          margin:0 10px 0 0
+        }
+        li{
+          @include boxSizing;
+          float: left;
+          width: 162px;
+          height: 162px;
+          background-color: #f2f4f6;
+          padding:80px 22px 22px;
+          background-repeat:no-repeat ;
+          background-position: 22px 22px;
+          background-size:40px auto;
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            p{
+              font-size: 13px;
+              line-height: 1.3;
+              letter-spacing: -1px;
+              margin: 0 0 10px;
+            }
+            h3{
+              font-size: 19px;
+              letter-spacing: -2px;
+            }
+          }
+        }
+      }
+      .type_1{
+        margin: 0 0 10px;
+        li:first-child{
+          background-image: url(../../images/main/donate_icon_1.jpg);
+        }
+        li:last-child{
+          background-image: url(../../images/main/donate_icon_2.jpg);
+        }
+      }
+      .type_2{
+        li:first-child{
+          background-image: url(../../images/main/donate_icon_3.jpg);
+        }
+        li:last-child{
+          background-image: url(../../images/main/donate_icon_4.jpg);
+        }
+      }
+    }
+  }
+  & #videoInfo{
+    margin: 0 0 75px;
+    .bg_box{
+      width: 100%;
+      height: 182px;
+      background: url(../../images/main/videoInfo_bg.jpg) 0 50% no-repeat;
+      background-size: 100% auto ;
+    }
+    .video_box{
+      position: relative;
+      width: 335px;
+      height: 188px;
+      margin: -82px auto 30px;
+      background-color: #000;
+    }
+    .txt_box{
+      text-align: center;
+      .underline{
+        margin: 0 0 10px;
+        strong{
+          font-size: 17px;
+          letter-spacing: -2px;
+        }
+      }
+      .underline::after{
+        margin: -3px 0 0;
+      }
+      h3{
+        font-size: 25px;
+        letter-spacing: -2px;
+        margin: 0 0 20px;
+      }
+      p{
+        font-size: 13px;
+        letter-spacing: -1px;
+        line-height: 1.6;
+        margin: 0 auto 30px;
+        @include boxSizing;
+        word-break: keep-all;
+        color: #3d3e3f;
+      }
+    }
+  }
+  & #warehouse{
+    margin: 0 0 68px;
+    .control_box{
+      margin: 0 20px 21px;
+      @extend %clearfix;
+      .title_box{
+        float: left;
+        @include boxSizing;
+        padding:0 0 0 50px;
+        background: url(../../images/main/logo95.jpg) 0 0 no-repeat;
+        background-size:42px auto ;
+        span{
+          display: block;
+          font-weight: $bold;
+          font-size: 15px;
+          letter-spacing: -2px;
+        }
+        strong{
+          font-size: 25px;
+          letter-spacing: -2px;
+        }
+      }
+      .btn_box{
+        float: right;
+        height: 40px;
+        line-height: 40px;
+        button{
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          border:1px solid #c5c7c8;
+          border-radius: 20px;
+          font-size: 0;
+          vertical-align: middle;
+          margin: 0 3px;
+        }
+        .prev_btn:after{
+          display: block;
+          content: " ";
+          width: 10px;
+          height: 10px;
+          border-top:2px solid #000;
+          border-right:2px solid #000;
+          margin:0 0 0 16px;
+          transform: rotate(-135deg);
+          @include boxSizing;
+        }
+        .next_btn:after{
+          display: block;
+          content: " ";
+          width: 10px;
+          height: 10px;
+          border-top:2px solid #000;
+          border-right:2px solid #000;
+          margin:0 0 0 11px;
+          transform: rotate(45deg);
+          @include boxSizing;
+        }
+        .index_box{
+          display: inline-block;
+          font-size: 12px;
+          margin: 0 0 0 2px;
+        }
+      }
+    }
+    .item_swiper{
+      margin: 0 0 0 10px;
+      .swiper-slide{
+        width: 163px;
+        height: 219px;
+        background-color: #f2f4f6;
+        margin:0 0 0 10px;
+        a{
+          display: block;
+          width: 100%;
+          height: 100%;
+          margin: 30px 0 0;
+          .item_info{
+            text-align: center;
+            img{
+              width: 115px;
+              margin:0 0 12px;
+            }
+            h4{
+              font-size: 14px;
+              margin: 0 0 8px;
+              letter-spacing: -1px;
+            }
+            & > div{
+              font-size: 13px;
+              font-weight: 500;
+              color: $red;
+              span{
+                font-weight: 700;
+                color: $red;
+                letter-spacing: -1px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  & #principle{
+    margin: 0 0 30px;
+    background: url(../../images/main/principle_bg.jpg) 0 82px no-repeat;
+    background-size: 100% auto;
+    .title_box{
+      text-align: center;
+      padding: 0 0 291px;
+      .underline{
+        margin: 0 0 15px;
+        letter-spacing: -1px;
+        strong{
+          font-size: 15px;
+        }
+      }
+      .underline:after{
+        margin: -1% 0 0;
+      }
+      h3{
+        font-size: 25px;
+        letter-spacing: -2px;
+      }
+    }
+    .rule_box{
+      width: 334px;
+      margin:0 auto;
+      @extend  %clearfix;
+      li{
+        float: left;
+        width: 162px;
+        height: 150px;
+        @include boxSizing;
+        padding: 22px 0 0 13px;
+        h5{
+          font-size: 16px;
+          color: $red;
+          margin:0 0 10px;
+          letter-spacing: -1px;
+        }
+        p{
+          font-size: 13px;
+          line-height: 1.4;
+          letter-spacing: -1px;
+        }
+      }
+      li:nth-of-type(2n-1){
+        margin:0 10px 0 0;
+      }
+      li:nth-of-type(1){
+        background: url(../../images/main/ruleNum_1.png) 0 0 no-repeat;
+        background-size: 24px auto;
+      }
+      li:nth-of-type(2){
+        background: url(../../images/main/ruleNum_2.png) 0 0 no-repeat;
+        background-size: 25px auto;
+      }
+      li:nth-of-type(3){
+        background: url(../../images/main/ruleNum_3.png) 0 0 no-repeat;
+        background-size: 25px auto;
+      }
+      li:nth-of-type(4){
+        background: url(../../images/main/ruleNum_4.png) 0 0 no-repeat;
+        background-size: 28px auto;
+      }
+    }
+  }
+  & #workInfo{
+    padding: 74px 0 10px;
+    margin: 0 0 55px;
+    text-align: center;
+    background-color: #fdfbf1;
+      .title_box{
+        margin:0 0 20px;
+        .underline{
+          font-size: 15px;
+          letter-spacing: -1px;
+          margin:0 0 20px;
+        }
+        h3{
+          font-size: 27px;
+          letter-spacing: -2px;
+          line-height: 1.4;
+        }
+      }
+    ul{
+      li{
+        padding: 20px 0 40px;
+        .underline{
+          margin:0 0 24px;
+          strong{
+            font-size: 14px;
+            letter-spacing: -1px;
+          }
+        }
+        .counter_box{
+          margin:0 0 18px;
+          em{
+            font-weight: $black;
+            font-size: 50px;
+            letter-spacing: -2px;
+          }
+          strong{
+            display: inline-block;
+            font-size: 22px;
+            letter-spacing: -2px;
+            margin:0 0 0 5px;
+          }
+        }
+        p{
+          font-size: 13px;
+          line-height: 1.4;
+          letter-spacing: -1px;
+        }
+      }
+      li:nth-of-type(1){
+        background: url(../../images/main/counter_bg1.jpg) calc(50% + 30px) 0px no-repeat;
+        background-size: 61px auto;
+      }
+      li:nth-of-type(2){
+        background: url(../../images/main/counter_bg2.jpg) calc(50% + 31px) 0px no-repeat;
+        background-size: 62px auto;
+      }
+      li:nth-of-type(3){
+        background: url(../../images/main/counter_bg3.jpg) calc(50% + 37px) 0px no-repeat;
+        background-size: 73px auto;
+      }
+    }
+  }
+  & #activist{
+    margin: 0 0 50px;
+    text-align: center;
+    .title_box{
+      margin: 0 0 32px;
+      .underline{
+        font-size: 15px;
+        letter-spacing: -1px;
+        margin: 0 0 15px;
+      }
+      h3{
+        font-size: 22px;
+        letter-spacing: -2px;
+        line-height: 1.2;
+      }
+    }
+    .activist_swiper{
+      padding:0 0 45px;
+      .swiper-slide{
+        position: relative;
+        width: 253px;
+        height: 342px;
+        background-color: #aaa;
+        margin: 0 5px;
+        text-align: left;
+        transition: transform .35s;
+        transform: scale(0.9);
+        .txt_box{
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top:222px;
+          margin: 0 20px;
+          .underline{
+            margin:0 0 15px;
+            strong{
+              font-size: 18px;
+              letter-spacing: -1px;
+              color: #fff;
+              padding: 0 5px 0 3px;
+            }
+          }
+          .underline:after{
+            padding: 4px 0;
+            margin: -4% 0 0;
+          }
+          p{
+            font-size:13px ;
+            color: #fff;
+            letter-spacing: -1px;
+            line-height: 1.4;
+          }
+        }
+      }
+      .swiper-slide-active{
+        transform: scale(1);
+      }
+      .swiper-slide.list_1{
+        background: url(../../images/main/activist_01.jpg) 50% 0px no-repeat;
+        background-size:auto 100%;
+      }
+      .swiper-slide.list_2{
+        background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat;
+        background-size:auto 100%;
+      }
+      .swiper-slide.list_3{
+        background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat;
+        background-size:auto 100%;
+      }
+      .swiper-slide.list_4{
+        background: url(../../images/main/activist_04.jpg) 50% 0px no-repeat;
+        background-size:auto 100%;
+      }
+      .swiper-pagination-bullet{
+        background-color: #fff;
+        border:1px solid #000;
+      }
+      .swiper-pagination-bullet-active{
+        background-color: #000;
+      }
+    }
+  }
+  & #donateArea{
+    text-align: center;
+    background-color: #fdfbf1;
+    padding: 0 0 60px;
+    .bg_box{
+      width: 100%;
+      height: 215px;
+      background: url(../../images/main/donateArea_bg.jpg) 0px 0px no-repeat;
+      background-size: 100% auto;
+    }
+    .txt_box{
+      width:336px;
+      background-color: #fff;
+      margin: -40px auto 0;
+      box-shadow: 0px 7px 9px rgba(186,180,152,0.3);
+      padding: 45px 0;
+      .underline{
+        margin:0 0 6px;
+        strong{
+          font-size: 23px;
+          letter-spacing: -2px;
+        }
+      }
+      .underline::after{
+        margin:-3px 0 0;
+      }
+      p{
+        margin:20px 0 0;
+        font-size: 12px;
+        line-height: 1.6;
+        letter-spacing: -1px;
+      }
+      .donate_btn{
+        margin:32px 0 0;
+      }
+    }
+
+  }
+  & #campaigns{
+    background-color: #fdfbf1;
+    .txt_box{
+      background: url(../../images/main/campaigns_bg.jpg) 23px 0px no-repeat;
+      background-size: 332px;
+      height: 219px;
+      margin: 0 0 0 20px;
+      @include boxSizing;
+      padding: 25px 0 0;
+      .underline{
+        margin: 0 0 15px;
+        strong{
+          font-size: 15px;
+          letter-spacing: -1px;
+        }
+      }
+      h3{
+        font-size: 20px;
+        letter-spacing: -2px;
+        line-height: 1.3;
+      }
+    }
+    .campaigns_swiper_bg{
+      background-color: #fff;
+      .campaigns_swiper{
+        position: relative;
+        left: 0;
+        top:-65px;
+        width: 335px;
+        padding:  0 0 50px;
+        .swiper-slide{
+          width: 162px;
+          margin: 0 7px 0;
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            .img_box{
+              position: relative;
+              margin: 0 0 15px;
+              img{
+                width: 100%;
+              }
+              .label_box{
+                position: absolute;
+                left: 0 ;
+                bottom: -6px;
+                font-size:11px;
+                color: #fff;
+                background-color: $red;
+                padding: 5px 7px;
+              }
+            }
+            h4{
+              font-size: 14px;
+              letter-spacing: -1px;
+              line-height: 1.4;
+            }
+          }
+
+        }
+        .swiper-slide:nth-of-type(2n-1){
+          margin:0px
+        }
+        .swiper-pagination-bullet{
+          background-color: #fff;
+          border:1px solid #000;
+        }
+        .swiper-pagination-bullet-active{
+          background-color: #000;
+        }
+      }
+    }
+
+  }
+}
+
+.page_btn{
+  height: 110px;
+  position: fixed;
+  bottom:60px;
+  right:20px;
+  z-index: 100;
+  button{
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,0.2);
+    font-size: 0;
+    border-radius: 25px;
+    margin: 0 0 10px;
+  }
+  .prev_con:after{
+    display: block;
+    content: " ";
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    margin: 4px auto 0;
+    transform: rotate(-45deg);
+  }
+  .next_con:after{
+    display: block;
+    content: " ";
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    margin: -4px auto 0;
+    transform: rotate(135deg);
+  }
+}
+
+// 테블릿
+@include tablet(){
+  body{
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  #wrap{
+    max-width: 750px;
+    margin:0 auto;
+    .donate_btn{
+      text-align: center;
+      a{
+        width: 364px;
+        margin: 0 auto 0;
+        font-size: 28px;
+        padding: 26px 0;
+      }
+
+    }
+    .underline{
+      strong{
+        padding:  0 4px;
+      }
+    }
+    .underline::after{
+      display: block;
+      content:  " ";
+      width: 100%;
+      padding:4px 0;
+      margin: -4px 0 0;
+      background-color: $red;
+    }
+    & #mainVisual{
+      margin:0 0 110px;
+      .visual_swiper{
+        height: 900px;
+        .txt_box{
+          position: absolute;
+          left: 40px;
+          bottom: 70px;
+          z-index: 1;
+          strong{
+            font-size: 54px;
+            letter-spacing: -2px;
+            margin: 4px 0;
+            line-height: 1.2;
+            padding: 0 6px 0 4px;
+          }
+        }
+        .custom_pagination{
+          left: 40px;
+          bottom: 330px;
+        }
+      }
+      .donate_box{
+        width: 670px;
+        margin: 36px auto 0 ;
+        .list_block{
+          li:first-child{
+            margin:0 20px 0 0
+          }
+          li{
+            @include boxSizing;
+            float: left;
+            width: 324px;
+            height: 324px;
+            background-color: #f2f4f6;
+            padding:160px 44px 44px;
+            background-repeat:no-repeat ;
+            background-position: 44px 44px;
+            background-size:80px auto;
+            a{
+              p{
+                font-size: 23px;
+                margin: 0 0 20px;
+              }
+              h3{
+                font-size: 38px;
+              }
+            }
+          }
+        }
+        .type_1{
+          margin: 0 0 20px;
+        }
+      }
+    }
+    & #videoInfo{
+      margin: 0 0 150px;
+      .bg_box{
+        width: 100%;
+        height: 364px;
+      }
+      .video_box{
+        position: relative;
+        width: 670px;
+        height: 376px;
+        margin: -164px auto 60px;
+        background-color: #000;
+      }
+      .txt_box{
+        text-align: center;
+        .underline{
+          margin: 0 0 20px;
+          strong{
+            font-size: 32px;
+          }
+        }
+        .underline::after{
+          margin: -6px 0 0;
+        }
+        h3{
+          font-size: 50px;
+          letter-spacing: -2px;
+          margin: 0 0 40px;
+        }
+        p{
+          font-size: 26px;
+          margin: 0 auto 60px;
+          @include boxSizing;
+          word-break: keep-all;
+          color: #3d3e3f;
+        }
+      }
+    }
+    & #warehouse{
+      margin: 0 0 136px;
+      .control_box{
+        margin: 0 40px 42px;
+        .title_box{
+          float: left;
+          @include  boxSizing;
+          padding:0 0 0 100px;
+          background-size:82px auto ;
+          span{
+            font-size: 30px;
+          }
+          strong{
+            font-size: 50px;
+          }
+
+        }
+        .btn_box{
+          float: right;
+          height: 80px;
+          line-height: 80px;
+          button{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+            vertical-align: middle;
+            margin: 0 6px;
+          }
+          .prev_btn:after{
+            display: block;
+            content: " ";
+            width: 20px;
+            height: 20px;
+            border-top:2px solid #000;
+            border-right:2px solid #000;
+            margin:0 0 0 32px;
+            transform: rotate(-135deg);
+            @include boxSizing;
+          }
+          .next_btn:after{
+            display: block;
+            content: " ";
+            width: 20px;
+            height: 20px;
+            border-top:2px solid #000;
+            border-right:2px solid #000;
+            margin:0 0 0 22px;
+            transform: rotate(45deg);
+            @include boxSizing;
+          }
+          .index_box{
+            display: inline-block;
+            font-size: 24px;
+            margin: 0 0 0 4px;
+          }
+        }
+      }
+      .item_swiper{
+        margin: 0 0 0 10px;
+        .swiper-slide{
+          width: 163px;
+          height: 219px;
+          background-color: #f2f4f6;
+          margin:0 0 0 10px;
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 30px 0 0;
+            .item_info{
+              text-align: center;
+              img{
+                width: 115px;
+                margin:0 0 12px;
+              }
+              h4{
+                font-size: 14px;
+                margin: 0 0 8px;
+                letter-spacing: -1px;
+              }
+              & > div{
+                font-size: 13px;
+                font-weight: 500;
+                color: $red;
+                span{
+                  font-weight: 700;
+                  color: $red;
+                  letter-spacing: -1px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    & #principle{
+      margin: 0 0 60px;
+      background: url(../../images/main/principle_bg.jpg) 0px 164px no-repeat;
+      background-size: 100% auto;
+      .title_box{
+        text-align: center;
+        padding: 0 0 582px;
+        .underline{
+          margin: 0 0 30px;
+          letter-spacing: -1px;
+          strong{
+            font-size: 30px;
+          }
+        }
+        .underline:after{
+          margin: -1% 0 0;
+        }
+        h3{
+          font-size: 50px;
+        }
+      }
+      .rule_box{
+        width: 668px;
+        li{
+          float: left;
+          width: 324px;
+          height: 300px;
+          @include boxSizing;
+          padding: 44px 0 0 26px;
+          h5{
+            font-size: 32px;
+            margin:0 0 20px;
+          }
+          p{
+            font-size: 26px;
+          }
+        }
+        li:nth-of-type(2n-1){
+          margin:0 20px 0 0;
+        }
+        li:nth-of-type(1){
+          background: url(../../images/main/ruleNum_1.png) 0 0 no-repeat;
+          background-size: 48px auto;
+        }
+        li:nth-of-type(2){
+          background: url(../../images/main/ruleNum_2.png) 0 0 no-repeat;
+          background-size: 50px auto;
+        }
+        li:nth-of-type(3){
+          background: url(../../images/main/ruleNum_3.png) 0 0 no-repeat;
+          background-size: 50px auto;
+        }
+        li:nth-of-type(4){
+          background: url(../../images/main/ruleNum_4.png) 0 0 no-repeat;
+          background-size: 56px auto;
+        }
+      }
+    }
+    & #workInfo{
+      padding: 148px 0 20px;
+      margin: 0 0 110px;
+      .title_box{
+        margin:0 0 40px;
+        .underline{
+          font-size: 30px;
+          margin:0 0 40px;
+        }
+        h3{
+          font-size: 52px;
+        }
+      }
+      ul{
+        li{
+          padding: 40px 0 80px;
+          .underline{
+            margin:0 0 48px;
+            strong{
+              font-size: 28px;
+            }
+          }
+          .counter_box{
+            margin:0 0 36px;
+            em{
+              font-size: 100px;
+            }
+            strong{
+              font-size: 44px;
+              margin:0 0 0 10px;
+            }
+          }
+          p{
+            font-size: 26px;
+          }
+        }
+        li:nth-of-type(1){
+          background: url(../../images/main/counter_bg1.jpg) calc(50% + 60px) 0px no-repeat;
+          background-size: 122px auto;
+        }
+        li:nth-of-type(2){
+          background: url(../../images/main/counter_bg2.jpg) calc(50% + 62px) 0px no-repeat;
+          background-size: 124px auto;
+        }
+        li:nth-of-type(3){
+          background: url(../../images/main/counter_bg3.jpg) calc(50% + 74px) 0px no-repeat;
+          background-size: 146px auto;
+        }
+      }
+    }
+    & #activist{
+      margin: 0 0 100px;
+      text-align: center;
+      .title_box{
+        margin: 0 0 64px;
+        .underline{
+          font-size: 30px;
+          margin: 0 0 30px;
+        }
+        h3{
+          font-size: 22px;
+          letter-spacing: -2px;
+        }
+      }
+      .activist_swiper{
+        padding:0 0 45px;
+        .swiper-slide{
+          position: relative;
+          width: 253px;
+          height: 342px;
+          background-color: #aaa;
+          margin: 0 5px;
+          text-align: left;
+          transition: transform .35s;
+          transform: scale(0.9);
+          .txt_box{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top:222px;
+            margin: 0 20px;
+            .underline{
+              margin:0 0 15px;
+              strong{
+                font-size: 18px;
+                letter-spacing: -1px;
+                color: #fff;
+                padding: 0 5px 0 3px;
+              }
+            }
+            .underline:after{
+              padding: 4px 0;
+              margin: -4% 0 0;
+            }
+            p{
+              font-size:13px ;
+              color: #fff;
+              letter-spacing: -1px;
+              line-height: 1.4;
+            }
+          }
+        }
+        .swiper-slide-active{
+          transform: scale(1);
+        }
+        .swiper-slide.list_1{
+          background: url(../../images/main/activist_01.jpg) 50% 0px no-repeat;
+          background-size:auto 100%;
+        }
+        .swiper-slide.list_2{
+          background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat;
+          background-size:auto 100%;
+        }
+        .swiper-slide.list_3{
+          background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat;
+          background-size:auto 100%;
+        }
+        .swiper-slide.list_4{
+          background: url(../../images/main/activist_04.jpg) 50% 0px no-repeat;
+          background-size:auto 100%;
+        }
+        .swiper-pagination-bullet{
+          background-color: #fff;
+          border:1px solid #000;
+        }
+        .swiper-pagination-bullet-active{
+          background-color: #000;
+        }
+      }
+    }
+    & #donateArea{
+      text-align: center;
+      background-color: #fdfbf1;
+      padding: 0 0 120px;
+      .bg_box{
+        width: 100%;
+        height: 430px;
+      }
+      .txt_box{
+        width:672px;
+        background-color: #fff;
+        margin: -80px auto 0;
+        box-shadow: 0px 7px 9px rgba(186,180,152,0.3);
+        padding: 90px 0;
+        .underline{
+          margin:0 0 12px;
+          strong{
+            font-size: 46px;
+          }
+        }
+        .underline::after{
+          margin:-6px 0 0;
+        }
+        p{
+          margin:40px 0 0;
+          font-size: 24px;
+        }
+        .donate_btn{
+          margin:64px 0 0;
+        }
+      }
+
+    }
+    & #campaigns{
+      background-color: #fdfbf1;
+      .txt_box{
+        background: url(../../images/main/campaigns_bg.jpg) 26px 0px no-repeat;
+        background-size: 664px;
+        height: 438px;
+        margin: 0 0 0 40px;
+        @include boxSizing;
+        padding: 50px 0 0;
+        .underline{
+          margin: 0 0 30px;
+          strong{
+            font-size: 30px;
+          }
+        }
+        h3{
+          font-size: 40px;
+        }
+      }
+      .campaigns_swiper_bg{
+        background-color: #fff;
+        .campaigns_swiper{
+          position: relative;
+          left: 0;
+          top:-130px;
+          width: 670px;
+          padding:  0 0 100px;
+          .swiper-slide{
+            width: 324px;
+            margin: 0 14px 0;
+            a{
+              .img_box{
+                position: relative;
+                margin: 0 0 30px;
+                .label_box{
+                  position: absolute;
+                  bottom: -12px;
+                  font-size:22px;
+                  padding: 10px 14px;
+                }
+              }
+              h4{
+                font-size: 28px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+  .page_btn{
+    height: 220px;
+    bottom:120px;
+    right:40px;
+    z-index: 100;
+    button{
+      display: block;
+      width: 90px;
+      height: 90px;
+      background-color: rgba(0,0,0,0.2);
+      font-size: 0;
+      border-radius: 45px;
+      margin: 0 0 20px;
+    }
+    .prev_con:after{
+      display: block;
+      content: " ";
+      width: 16px;
+      height: 16px;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      margin: 8px auto 0;
+      transform: rotate(-45deg);
+    }
+    .next_con:after{
+      display: block;
+      content: " ";
+      width: 16px;
+      height: 16px;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      margin: -8px auto 0;
+      transform: rotate(135deg);
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+header {
+   width:100%;
+   height:60px; display:block; padding:10px 20px 0 16px;
+   align-items:center;
+   //background-color: #aaa;
+   background-color:transparent;
+   position:fixed; z-index:99;
+   @include boxSizing;
+   @extend %clearfix;
+   #logo {
+      width:126px; height:auto; display:inline-block; float:left;
+      a {
+         width: 100%;
+         height: 100%;
+         display: block;
+         img{
+            width: 100%;
+
+         }
+      }
+   }
+   & > div.donate_btn {float:right;}
+}
+/* footer */
+.footer {
+   width:100%; background-color:#181b2e; letter-spacing:normal;
+   color: #fff;font-size: 12px;text-align: center;line-height: 1.6;
+   padding: 20px 0;
+   span{
+      display: inline-block;
+      margin: 0 2px;
+   }
+   strong{
+      font-weight: $bold;
+   }
+   a{
+      color: #fff;
+   }
+   
+}
+.donate_btn {
+   a {width:132px; padding:13px 0; display:inline-block; background-color:$red; color:#fff; font-size:13px; border-radius:70px; text-align:center; font-weight: $medium;letter-spacing: -1px;}
+}
+
+@include tablet(){
+   header {
+      max-width: 750px;
+      left: 50%;
+      transform: translate(-50% , 0);
+      height:120px; display:block; padding:20px 40px 0 32px;
+      @include boxSizing();
+      #logo {
+         width:252px;
+      }
+
+   }
+   /* footer */
+   .footer {
+      font-size: 24px;
+      padding: 40px 0;
+      span{
+         margin: 0 4px;
+      }
+   }
+   .donate_btn {
+      a {
+         width:264px; padding:26px 0;
+         font-size:26px; border-radius:140px;
+      }
+   }
+}

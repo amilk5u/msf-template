@@ -7,26 +7,35 @@ function main() {
             el: '.swiper-pagination',
         },
     });
+    var item_view = 2,
+        item_length = null,
+        item_counter = 0;
+
     var swiper_item = new Swiper('.swiper-container.item_swiper', {
         slidesPerView: "auto",
+        freeMode: true,
+        speed: $speed,
+        slidesPerGroup: item_view,
+        pagination: {
+            el: '.item-pagination',
+            type: 'fraction',
+        },
         navigation: {
             nextEl: '.next_btn.item_btn',
             prevEl: '.prev_btn.item_btn',
         },
-        loop : true,
-        freeMode: true,
-        speed: $speed,
         on:{
             init:function(){
-                var $length = $(".item_swiper  .swiper-slide").length;
-                $(".control_box .length").text($length/3);
-                $(".control_box .counter").text(this.realIndex+1);
+                item_length = $(".item_swiper  .swiper-slide").length;
+                $(".control_box .length").text(Math.ceil(item_length/item_view));
             },
-            slideChange:function(){
-                $(".control_box .counter").text(this.realIndex+1);
+            slideChange:function () {
+                console.log($(".swiper-pagination-current").text());
+
             }
         }
     });
+
     var swiper_activist= new Swiper('.swiper-container.activist_swiper', {
         slidesPerView: "auto",
         loop : true,

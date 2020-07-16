@@ -8,13 +8,19 @@ header {
       img { width:100%; }
    }
    nav {
-      width:750px; padding:54px 0 0; position:absolute; left:50%;
+      width:875px; padding:54px 0 0; position:absolute; left:50%;
       @include translate(-50%, 0);
       ul#myMenu {
          width:100%; display:inline-block;
          @extend %clearfix;
          li {
             float:left; padding:0 36px;
+            &.anchor_none { position:absolute; opacity:0; z-index:-999; }
+            &.back_gray a:before {
+               width:0; height:2px; content:""; display:block; position:absolute; bottom:0; z-index:-1; background-color:#d1d3d5;
+               @include transition(all, .4s);
+            }
+            &.back_gray a:before { width:100%; }
             em { padding:0 5px 0 0; font-weight:600; }
             &:hover a {
                font-weight:$medium; color:$red;
@@ -22,11 +28,21 @@ header {
             }
             &.active a {
                font-weight:$medium; color:$red;
-               &:after { width:100%; height:2px; content:""; display:block; position:absolute; bottom:-10px; z-index:-1; background-color:$red; }
+               &:after { width:100%; background-color:$red; }
+            }
+            &.active.half a {
+               &:after { width:50%; background-color:$red; }
+            }
+            &.half a {
+               font-weight:$medium; color:$red;
+               &:after { width:100%; background-color:$red; }
             }
             a {
-               font-size:17px; font-weight:$regular; position:relative; color:$gray2; letter-spacing:-1px;
-               @include transition(color, .2s);
+               display:block; padding:0 0 10px; font-size:17px; font-weight:$regular; position:relative; color:$gray2; letter-spacing:-1px; overflow:hidden;
+               &:after {
+                  width:0; height:2px; content:""; display:block; position:absolute; bottom:0; z-index:-1; background-color:transparent;
+                  @include transition(all, .4s);
+               }
             }
          }
       }
@@ -62,7 +78,12 @@ header {
    @include pc-b() {
       height:100px; padding:0 40px;
       #logo { width:192px; height:58px; padding:23px 0 0; }
-      nav { padding:48px 0 0; }
+      nav {
+         width:830px; padding:48px 0 0;
+         ul#myMenu {
+            li { padding:0 32px; }
+         }
+      }
       .donate_btn {
          padding:31px 0 0;
          a { width:172px; padding:17px 0; }
@@ -72,11 +93,9 @@ header {
    @include pc-c() {
       padding:0 33px;
       nav {
-         width:635px;
+         width:695px;
          ul#myMenu {
-            li {
-               padding:0 26px;
-            }
+            li { padding:0 21px; }
          }
       }
    }
@@ -131,13 +150,7 @@ header {
       }
       .donate_btn {
          float:right; padding:25px 0 0;
-         a {
-            width:200px; padding:15px 0; border-radius:inherit; background-color:#cb0007;
-            &:after {
-               width:6px; height:10px; content:""; display:inline-block; margin-left:6px;
-               background:url(../../images/common/footer_btn_dir.png) no-repeat 0 0; background-size:100% 100%;
-            }
-         }
+         a { width:200px; padding:15px 0; }
       }
    }
    //1600

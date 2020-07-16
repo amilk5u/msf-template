@@ -132,7 +132,7 @@ a { text-decoration: none; cursor: pointer; color: #1e1e1e; }
 
 a:link, a:visited, a:active, a:hover { text-decoration: none; }
 
-select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 20px; font-weight: 300; font-family: "Lato", "Noto Sans KR", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
+select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 20px; font-weight: 400; font-family: "Lato", "Noto Sans KR", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
 
 select[type="checkbox"], input[type="checkbox"], button[type="checkbox"], textarea[type="checkbox"] { -webkit-appearance: checkbox; }
 
@@ -140,7 +140,7 @@ select[type="radio"], input[type="radio"], button[type="radio"], textarea[type="
 
 select::-ms-expand, input::-ms-expand, button::-ms-expand, textarea::-ms-expand { display: none; }
 
-html, body { font-family: "Lato", "Noto Sans KR", AppleGothic, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 300; color: #1e1e1e; word-break: keep-all; line-height: 1; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
+html, body { font-family: "Lato", "Noto Sans KR", AppleGothic, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 400; color: #1e1e1e; word-break: keep-all; line-height: 1; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
 
 strong, h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 
@@ -165,7 +165,7 @@ header > div.donate_btn { float: right; }
 
 .footer a { color: #fff; }
 
-.donate_btn a { width: 132px; padding: 13px 0; display: inline-block; background-color: #f70707; color: #fff; font-size: 13px; border-radius: 70px; text-align: center; font-weight: 500; letter-spacing: -1px; }
+.donate_btn a { width: 132px; padding: 13px 0; display: inline-block; background-color: #f70707; color: #fff; font-size: 13px; border-radius: 70px; text-align: center; font-weight: 600; letter-spacing: -1px; }
 
 @media screen and (min-width: 700px) { header { max-width: 750px; left: 50%; transform: translate(-50%, 0); height: 120px; display: block; padding: 20px 40px 0 32px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
   header #logo { width: 252px; }
@@ -182,7 +182,7 @@ header > div.donate_btn { float: right; }
 
 #wrap .underline strong { display: inline-block; position: relative; top: 0; left: 0; z-index: 1; padding: 0 2px; }
 
-#wrap .underline::after { display: block; content: " "; width: 100%; padding: 2px 0; margin: -2px 0 0; background-color: #f70707; }
+#wrap .underline::after { display: block; content: " "; width: 100%; padding: 2px 0; margin: -4px 0 0; background-color: #f70707; }
 
 #wrap #mainVisual { margin: 0 0 55px; }
 
@@ -204,13 +204,13 @@ header > div.donate_btn { float: right; }
 
 #wrap #mainVisual .donate_box .list_block li:first-child { margin: 0 10px 0 0; }
 
-#wrap #mainVisual .donate_box .list_block li { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 162px; height: 162px; background-color: #f2f4f6; padding: 80px 22px 22px; background-repeat: no-repeat; background-position: 22px 22px; background-size: 40px auto; }
+#wrap #mainVisual .donate_box .list_block li { width: 162px; height: 162px; float: left; background-color: #f2f4f6; padding: 80px 22px 22px; background-repeat: no-repeat; background-position: 22px 22px; background-size: 40px auto; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 #wrap #mainVisual .donate_box .list_block li a { display: block; width: 100%; height: 100%; }
 
 #wrap #mainVisual .donate_box .list_block li a p { font-size: 13px; line-height: 1.3; letter-spacing: -1px; margin: 0 0 10px; }
 
-#wrap #mainVisual .donate_box .list_block li a h3 { font-size: 19px; letter-spacing: -2px; }
+#wrap #mainVisual .donate_box .list_block li a h4 { font-size: 19px; letter-spacing: -2px; }
 
 #wrap #mainVisual .donate_box .type_1 { margin: 0 0 10px; }
 
@@ -228,6 +228,8 @@ header > div.donate_btn { float: right; }
 
 #wrap #videoInfo .video_box { position: relative; width: 335px; height: 188px; margin: -82px auto 30px; background-color: #000; }
 
+#wrap #videoInfo .video_box iframe { width: 100%; height: 100%; }
+
 #wrap #videoInfo .txt_box { text-align: center; }
 
 #wrap #videoInfo .txt_box .underline { margin: 0 0 10px; }
@@ -240,13 +242,15 @@ header > div.donate_btn { float: right; }
 
 #wrap #videoInfo .txt_box p { font-size: 13px; letter-spacing: -1px; line-height: 1.6; margin: 0 auto 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; word-break: keep-all; color: #3d3e3f; }
 
+#wrap #videoInfo .txt_box p span { color: #000; }
+
 #wrap #warehouse { margin: 0 0 68px; }
 
 #wrap #warehouse .control_box { margin: 0 20px 21px; }
 
 #wrap #warehouse .control_box .title_box { float: left; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 0 0 50px; background: url(../../images/main/logo95.jpg) 0 0 no-repeat; background-size: 42px auto; }
 
-#wrap #warehouse .control_box .title_box span { display: block; font-weight: 700; font-size: 15px; letter-spacing: -2px; }
+#wrap #warehouse .control_box .title_box span { display: block; font-weight: 700; font-size: 15px; letter-spacing: -1px; position: relative; top: -1px; }
 
 #wrap #warehouse .control_box .title_box strong { font-size: 25px; letter-spacing: -2px; }
 
@@ -254,27 +258,29 @@ header > div.donate_btn { float: right; }
 
 #wrap #warehouse .control_box .btn_box button { display: inline-block; width: 40px; height: 40px; border: 1px solid #c5c7c8; border-radius: 20px; font-size: 0; vertical-align: middle; margin: 0 3px; }
 
+#wrap #warehouse .control_box .btn_box button.swiper-button-disabled { opacity: .5; }
+
 #wrap #warehouse .control_box .btn_box .prev_btn:after { display: block; content: " "; width: 10px; height: 10px; border-top: 2px solid #000; border-right: 2px solid #000; margin: 0 0 0 16px; transform: rotate(-135deg); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 #wrap #warehouse .control_box .btn_box .next_btn:after { display: block; content: " "; width: 10px; height: 10px; border-top: 2px solid #000; border-right: 2px solid #000; margin: 0 0 0 11px; transform: rotate(45deg); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-#wrap #warehouse .control_box .btn_box .index_box { display: inline-block; font-size: 12px; margin: 0 0 0 2px; }
+#wrap #warehouse .control_box .btn_box .index_box { width: auto; display: inline-block; font-size: 12px; margin: 0 0 0 2px; }
 
 #wrap #warehouse .item_swiper { margin: 0 0 0 10px; }
 
-#wrap #warehouse .item_swiper .swiper-slide { width: 163px; height: 219px; background-color: #f2f4f6; margin: 0 0 0 10px; }
+#wrap #warehouse .item_swiper .swiper-slide { width: 163px; height: 219px; background-color: #f8f9fb; margin: 0 0 0 10px; }
 
 #wrap #warehouse .item_swiper .swiper-slide a { display: block; width: 100%; height: 100%; margin: 30px 0 0; }
 
 #wrap #warehouse .item_swiper .swiper-slide a .item_info { text-align: center; }
 
-#wrap #warehouse .item_swiper .swiper-slide a .item_info img { width: 115px; margin: 0 0 12px; }
+#wrap #warehouse .item_swiper .swiper-slide a .item_info img { width: 115px; margin: 0 0 13px; }
 
-#wrap #warehouse .item_swiper .swiper-slide a .item_info h4 { font-size: 14px; margin: 0 0 8px; letter-spacing: -1px; }
+#wrap #warehouse .item_swiper .swiper-slide a .item_info h4 { font-size: 14px; margin: 0 0 7px; letter-spacing: -1px; }
 
 #wrap #warehouse .item_swiper .swiper-slide a .item_info > div { font-size: 13px; font-weight: 500; color: #f70707; }
 
-#wrap #warehouse .item_swiper .swiper-slide a .item_info > div span { font-weight: 700; color: #f70707; letter-spacing: -1px; }
+#wrap #warehouse .item_swiper .swiper-slide a .item_info > div span { font-weight: 700; color: #f70707; letter-spacing: 0; }
 
 #wrap #principle { margin: 0 0 30px; background: url(../../images/main/principle_bg.jpg) 0 82px no-repeat; background-size: 100% auto; }
 
@@ -284,7 +290,7 @@ header > div.donate_btn { float: right; }
 
 #wrap #principle .title_box .underline strong { font-size: 15px; }
 
-#wrap #principle .title_box .underline:after { margin: -1% 0 0; }
+#wrap #principle .title_box .underline:after { margin: -3px 0 0; }
 
 #wrap #principle .title_box h3 { font-size: 25px; letter-spacing: -2px; }
 
@@ -306,7 +312,7 @@ header > div.donate_btn { float: right; }
 
 #wrap #principle .rule_box li:nth-of-type(4) { background: url(../../images/main/ruleNum_4.png) 0 0 no-repeat; background-size: 28px auto; }
 
-#wrap #workInfo { padding: 74px 0 10px; margin: 0 0 55px; text-align: center; background-color: #fdfbf1; }
+#wrap #workInfo { padding: 74px 0 20px; margin: 0 0 55px; text-align: center; background-color: #fdfbf1; }
 
 #wrap #workInfo .title_box { margin: 0 0 20px; }
 
@@ -332,7 +338,15 @@ header > div.donate_btn { float: right; }
 
 #wrap #workInfo ul li:nth-of-type(2) { background: url(../../images/main/counter_bg2.jpg) calc(50% + 31px) 0px no-repeat; background-size: 62px auto; }
 
+#wrap #workInfo ul li:nth-of-type(2) .counter_box strong { margin: 0 0 0 0; }
+
 #wrap #workInfo ul li:nth-of-type(3) { background: url(../../images/main/counter_bg3.jpg) calc(50% + 37px) 0px no-repeat; background-size: 73px auto; }
+
+#wrap #workInfo ul .figure { letter-spacing: -0.5px; font-size: 13px; }
+
+#wrap #workInfo ul .figure em { font-family: "Noto Sans KR", Arial, Apple SD Gothic Neo, sans-serif; }
+
+#wrap #workInfo ul .figure:before { content: "*"; display: inline-block; color: #f70707; font-weight: 700; position: relative; top: 3px; font-size: 13px; }
 
 #wrap #activist { margin: 0 0 50px; text-align: center; }
 
@@ -358,13 +372,13 @@ header > div.donate_btn { float: right; }
 
 #wrap #activist .activist_swiper .swiper-slide-active { transform: scale(1); }
 
-#wrap #activist .activist_swiper .swiper-slide.list_1 { background: url(../../images/main/activist_01.jpg) 50% 0px no-repeat; background-size: auto 100%; }
+#wrap #activist .activist_swiper .swiper-slide.list_1 { background: url(../../images/main/activist_01.jpg) 50% 0px no-repeat; background-size: cover; }
 
-#wrap #activist .activist_swiper .swiper-slide.list_2 { background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat; background-size: auto 100%; }
+#wrap #activist .activist_swiper .swiper-slide.list_2 { background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat; background-size: cover; }
 
-#wrap #activist .activist_swiper .swiper-slide.list_3 { background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat; background-size: auto 100%; }
+#wrap #activist .activist_swiper .swiper-slide.list_3 { background: url(../../images/main/activist_03.jpg) 50% 0px no-repeat; background-size: cover; }
 
-#wrap #activist .activist_swiper .swiper-slide.list_4 { background: url(../../images/main/activist_04.jpg) 50% 0px no-repeat; background-size: auto 100%; }
+#wrap #activist .activist_swiper .swiper-slide.list_4 { background: url(../../images/main/activist_04.jpg) 50% 0px no-repeat; background-size: cover; }
 
 #wrap #activist .activist_swiper .swiper-pagination-bullet { background-color: #fff; border: 1px solid #000; }
 
@@ -410,7 +424,7 @@ header > div.donate_btn { float: right; }
 
 #wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide a .img_box .label_box { position: absolute; left: 0; bottom: -6px; font-size: 11px; color: #fff; background-color: #f70707; padding: 5px 7px; }
 
-#wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide a h4 { font-size: 14px; letter-spacing: -1px; line-height: 1.4; }
+#wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide a h4 { height: 40px; font-size: 14px; letter-spacing: -1px; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; white-space: normal; word-break: break-all; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 
 #wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide:nth-of-type(2n-1) { margin: 0px; }
 
@@ -426,56 +440,54 @@ header > div.donate_btn { float: right; }
 
 .page_btn .next_con:after { display: block; content: " "; width: 8px; height: 8px; border-top: 2px solid #fff; border-right: 2px solid #fff; margin: -4px auto 0; transform: rotate(135deg); }
 
-@media screen and (min-width: 700px) { body { max-width: 750px; margin: 0 auto; }
-  #wrap { max-width: 750px; margin: 0 auto; }
-  #wrap .donate_btn { text-align: center; }
-  #wrap .donate_btn a { width: 364px; margin: 0 auto 0; font-size: 28px; padding: 26px 0; }
+@media screen and (min-width: 700px) { #wrap .donate_btn { text-align: center; }
+  #wrap .donate_btn a { width: 364px; margin: 0 auto 0; font-size: 28px; padding: 31px 0; }
   #wrap .underline strong { padding: 0 4px; }
-  #wrap .underline::after { display: block; content: " "; width: 100%; padding: 4px 0; margin: -4px 0 0; background-color: #f70707; }
-  #wrap #mainVisual { margin: 0 0 110px; }
+  #wrap .underline::after { display: block; content: " "; width: 100%; padding: 4px 0; margin: -6px 0 0; background-color: #f70707; }
+  #wrap #mainVisual { max-width: 750px; margin: 0 auto 110px; }
   #wrap #mainVisual .visual_swiper { height: 900px; }
   #wrap #mainVisual .visual_swiper .txt_box { position: absolute; left: 40px; bottom: 70px; z-index: 1; }
   #wrap #mainVisual .visual_swiper .txt_box strong { font-size: 54px; letter-spacing: -2px; margin: 4px 0; line-height: 1.2; padding: 0 6px 0 4px; }
   #wrap #mainVisual .visual_swiper .custom_pagination { left: 40px; bottom: 330px; }
   #wrap #mainVisual .donate_box { width: 670px; margin: 36px auto 0; }
   #wrap #mainVisual .donate_box .list_block li:first-child { margin: 0 20px 0 0; }
-  #wrap #mainVisual .donate_box .list_block li { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 324px; height: 324px; background-color: #f2f4f6; padding: 160px 44px 44px; background-repeat: no-repeat; background-position: 44px 44px; background-size: 80px auto; }
+  #wrap #mainVisual .donate_box .list_block li { width: 324px; height: 324px; float: left; background-color: #f2f4f6; padding: 160px 44px 44px; background-repeat: no-repeat; background-position: 44px 44px; background-size: 80px auto; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
   #wrap #mainVisual .donate_box .list_block li a p { font-size: 23px; margin: 0 0 20px; }
-  #wrap #mainVisual .donate_box .list_block li a h3 { font-size: 38px; }
+  #wrap #mainVisual .donate_box .list_block li a h4 { font-size: 38px; }
   #wrap #mainVisual .donate_box .type_1 { margin: 0 0 20px; }
-  #wrap #videoInfo { margin: 0 0 150px; }
+  #wrap #videoInfo { max-width: 750px; margin: 0 auto 150px; }
   #wrap #videoInfo .bg_box { width: 100%; height: 364px; }
   #wrap #videoInfo .video_box { position: relative; width: 670px; height: 376px; margin: -164px auto 60px; background-color: #000; }
   #wrap #videoInfo .txt_box { text-align: center; }
   #wrap #videoInfo .txt_box .underline { margin: 0 0 20px; }
   #wrap #videoInfo .txt_box .underline strong { font-size: 32px; }
   #wrap #videoInfo .txt_box .underline::after { margin: -6px 0 0; }
-  #wrap #videoInfo .txt_box h3 { font-size: 50px; letter-spacing: -2px; margin: 0 0 40px; }
+  #wrap #videoInfo .txt_box h3 { font-size: 50px; letter-spacing: -5px; margin: 0 0 40px; }
   #wrap #videoInfo .txt_box p { font-size: 26px; margin: 0 auto 60px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; word-break: keep-all; color: #3d3e3f; }
-  #wrap #warehouse { margin: 0 0 136px; }
+  #wrap #warehouse { max-width: 750px; margin: 0 auto 136px; }
   #wrap #warehouse .control_box { margin: 0 40px 42px; }
   #wrap #warehouse .control_box .title_box { float: left; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 0 0 100px; background-size: 82px auto; }
-  #wrap #warehouse .control_box .title_box span { font-size: 30px; }
+  #wrap #warehouse .control_box .title_box span { font-size: 30px; position: relative; top: -4px; letter-spacing: -1px; }
   #wrap #warehouse .control_box .title_box strong { font-size: 50px; }
   #wrap #warehouse .control_box .btn_box { float: right; height: 80px; line-height: 80px; }
   #wrap #warehouse .control_box .btn_box button { display: inline-block; width: 80px; height: 80px; border-radius: 40px; vertical-align: middle; margin: 0 6px; }
-  #wrap #warehouse .control_box .btn_box .prev_btn:after { display: block; content: " "; width: 20px; height: 20px; border-top: 2px solid #000; border-right: 2px solid #000; margin: 0 0 0 32px; transform: rotate(-135deg); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-  #wrap #warehouse .control_box .btn_box .next_btn:after { display: block; content: " "; width: 20px; height: 20px; border-top: 2px solid #000; border-right: 2px solid #000; margin: 0 0 0 22px; transform: rotate(45deg); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+  #wrap #warehouse .control_box .btn_box .prev_btn:after { display: block; content: " "; width: 20px; height: 20px; border-top: 2px solid #000; border-right: 2px solid #000; margin: 0 0 0 33px; transform: rotate(-135deg); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+  #wrap #warehouse .control_box .btn_box .next_btn:after { display: block; content: " "; width: 20px; height: 20px; border-top: 2px solid #000; border-right: 2px solid #000; margin: 0 0 0 26px; transform: rotate(45deg); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
   #wrap #warehouse .control_box .btn_box .index_box { display: inline-block; font-size: 24px; margin: 0 0 0 4px; }
-  #wrap #warehouse .item_swiper { margin: 0 0 0 10px; }
-  #wrap #warehouse .item_swiper .swiper-slide { width: 163px; height: 219px; background-color: #f2f4f6; margin: 0 0 0 10px; }
+  #wrap #warehouse .item_swiper { margin: 0 0 0 20px; }
+  #wrap #warehouse .item_swiper .swiper-slide { width: 326px; height: 438px; background-color: #f8f9fa; margin: 0 0 0 20px; }
   #wrap #warehouse .item_swiper .swiper-slide a { display: block; width: 100%; height: 100%; margin: 30px 0 0; }
   #wrap #warehouse .item_swiper .swiper-slide a .item_info { text-align: center; }
-  #wrap #warehouse .item_swiper .swiper-slide a .item_info img { width: 115px; margin: 0 0 12px; }
-  #wrap #warehouse .item_swiper .swiper-slide a .item_info h4 { font-size: 14px; margin: 0 0 8px; letter-spacing: -1px; }
-  #wrap #warehouse .item_swiper .swiper-slide a .item_info > div { font-size: 13px; font-weight: 500; color: #f70707; }
-  #wrap #warehouse .item_swiper .swiper-slide a .item_info > div span { font-weight: 700; color: #f70707; letter-spacing: -1px; }
-  #wrap #principle { margin: 0 0 60px; background: url(../../images/main/principle_bg.jpg) 0px 164px no-repeat; background-size: 100% auto; }
+  #wrap #warehouse .item_swiper .swiper-slide a .item_info img { width: 230px; margin: 0 0 24px; }
+  #wrap #warehouse .item_swiper .swiper-slide a .item_info h4 { font-size: 28px; margin: 0 0 16px; letter-spacing: -1px; }
+  #wrap #warehouse .item_swiper .swiper-slide a .item_info > div { font-size: 22px; font-weight: 500; color: #f70707; }
+  #wrap #warehouse .item_swiper .swiper-slide a .item_info > div span { font-weight: 700; color: #f70707; letter-spacing: 0; }
+  #wrap #principle { max-width: 750px; margin: 0 auto 60px; background: url(../../images/main/principle_bg.jpg) 0px 164px no-repeat; background-size: 100% auto; }
   #wrap #principle .title_box { text-align: center; padding: 0 0 582px; }
-  #wrap #principle .title_box .underline { margin: 0 0 30px; letter-spacing: -1px; }
-  #wrap #principle .title_box .underline strong { font-size: 30px; }
-  #wrap #principle .title_box .underline:after { margin: -1% 0 0; }
-  #wrap #principle .title_box h3 { font-size: 50px; }
+  #wrap #principle .title_box .underline { margin: 0 0 30px; letter-spacing: -2px; }
+  #wrap #principle .title_box .underline strong { font-size: 30px; letter-spacing: -2px; }
+  #wrap #principle .title_box .underline:after { margin: -1.4% 0 0; }
+  #wrap #principle .title_box h3 { font-size: 50px; letter-spacing: -4px; }
   #wrap #principle .rule_box { width: 668px; }
   #wrap #principle .rule_box li { float: left; width: 324px; height: 300px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 44px 0 0 26px; }
   #wrap #principle .rule_box li h5 { font-size: 32px; margin: 0 0 20px; }
@@ -485,7 +497,7 @@ header > div.donate_btn { float: right; }
   #wrap #principle .rule_box li:nth-of-type(2) { background: url(../../images/main/ruleNum_2.png) 0 0 no-repeat; background-size: 50px auto; }
   #wrap #principle .rule_box li:nth-of-type(3) { background: url(../../images/main/ruleNum_3.png) 0 0 no-repeat; background-size: 50px auto; }
   #wrap #principle .rule_box li:nth-of-type(4) { background: url(../../images/main/ruleNum_4.png) 0 0 no-repeat; background-size: 56px auto; }
-  #wrap #workInfo { padding: 148px 0 20px; margin: 0 0 110px; }
+  #wrap #workInfo { padding: 148px 0 40px; margin: 0 0 110px; }
   #wrap #workInfo .title_box { margin: 0 0 40px; }
   #wrap #workInfo .title_box .underline { font-size: 30px; margin: 0 0 40px; }
   #wrap #workInfo .title_box h3 { font-size: 52px; }
@@ -499,26 +511,28 @@ header > div.donate_btn { float: right; }
   #wrap #workInfo ul li:nth-of-type(1) { background: url(../../images/main/counter_bg1.jpg) calc(50% + 60px) 0px no-repeat; background-size: 122px auto; }
   #wrap #workInfo ul li:nth-of-type(2) { background: url(../../images/main/counter_bg2.jpg) calc(50% + 62px) 0px no-repeat; background-size: 124px auto; }
   #wrap #workInfo ul li:nth-of-type(3) { background: url(../../images/main/counter_bg3.jpg) calc(50% + 74px) 0px no-repeat; background-size: 146px auto; }
-  #wrap #activist { margin: 0 0 100px; text-align: center; }
+  #wrap #workInfo ul .figure { font-size: 26px; }
+  #wrap #workInfo ul .figure:before { font-size: 26px; top: 5px; }
+  #wrap #activist { max-width: 750px; margin: 0 auto 100px; text-align: center; }
   #wrap #activist .title_box { margin: 0 0 64px; }
   #wrap #activist .title_box .underline { font-size: 30px; margin: 0 0 30px; }
-  #wrap #activist .title_box h3 { font-size: 22px; letter-spacing: -2px; }
-  #wrap #activist .activist_swiper { padding: 0 0 45px; }
-  #wrap #activist .activist_swiper .swiper-slide { position: relative; width: 253px; height: 342px; background-color: #aaa; margin: 0 5px; text-align: left; transition: transform .35s; transform: scale(0.9); }
-  #wrap #activist .activist_swiper .swiper-slide .txt_box { position: absolute; width: 100%; left: 0; top: 222px; margin: 0 20px; }
-  #wrap #activist .activist_swiper .swiper-slide .txt_box .underline { margin: 0 0 15px; }
-  #wrap #activist .activist_swiper .swiper-slide .txt_box .underline strong { font-size: 18px; letter-spacing: -1px; color: #fff; padding: 0 5px 0 3px; }
-  #wrap #activist .activist_swiper .swiper-slide .txt_box .underline:after { padding: 4px 0; margin: -4% 0 0; }
-  #wrap #activist .activist_swiper .swiper-slide .txt_box p { font-size: 13px; color: #fff; letter-spacing: -1px; line-height: 1.4; }
+  #wrap #activist .title_box h3 { font-size: 44px; letter-spacing: -2px; }
+  #wrap #activist .activist_swiper { padding: 0 0 90px; }
+  #wrap #activist .activist_swiper .swiper-slide { width: 506px; height: 684px; position: relative; background-color: #aaa; margin: 0 10px; text-align: left; transition: transform .35s; transform: scale(0.9); }
+  #wrap #activist .activist_swiper .swiper-slide .txt_box { position: absolute; width: 100%; left: 0; top: 444px; margin: 0 40px; }
+  #wrap #activist .activist_swiper .swiper-slide .txt_box .underline { margin: 0 0 30px; }
+  #wrap #activist .activist_swiper .swiper-slide .txt_box .underline strong { font-size: 52px; letter-spacing: -1px; color: #fff; padding: 0 20px 0 12px; }
+  #wrap #activist .activist_swiper .swiper-slide .txt_box .underline:after { padding: 16px 0; margin: -4% 0 0; }
+  #wrap #activist .activist_swiper .swiper-slide .txt_box p { font-size: 26px; color: #fff; letter-spacing: -1px; line-height: 1.4; }
   #wrap #activist .activist_swiper .swiper-slide-active { transform: scale(1); }
-  #wrap #activist .activist_swiper .swiper-slide.list_1 { background: url(../../images/main/activist_01.jpg) 50% 0px no-repeat; background-size: auto 100%; }
-  #wrap #activist .activist_swiper .swiper-slide.list_2 { background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat; background-size: auto 100%; }
-  #wrap #activist .activist_swiper .swiper-slide.list_3 { background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat; background-size: auto 100%; }
-  #wrap #activist .activist_swiper .swiper-slide.list_4 { background: url(../../images/main/activist_04.jpg) 50% 0px no-repeat; background-size: auto 100%; }
+  #wrap #activist .activist_swiper .swiper-slide.list_1 { background: url(../../images/main/activist_01.jpg) 50% 0px no-repeat; background-size: cover; }
+  #wrap #activist .activist_swiper .swiper-slide.list_2 { background: url(../../images/main/activist_02.jpg) 50% 0px no-repeat; background-size: cover; }
+  #wrap #activist .activist_swiper .swiper-slide.list_3 { background: url(../../images/main/activist_03.jpg) 50% 0px no-repeat; background-size: cover; }
+  #wrap #activist .activist_swiper .swiper-slide.list_4 { background: url(../../images/main/activist_04.jpg) 50% 0px no-repeat; background-size: cover; }
   #wrap #activist .activist_swiper .swiper-pagination-bullet { background-color: #fff; border: 1px solid #000; }
   #wrap #activist .activist_swiper .swiper-pagination-bullet-active { background-color: #000; }
   #wrap #donateArea { text-align: center; background-color: #fdfbf1; padding: 0 0 120px; }
-  #wrap #donateArea .bg_box { width: 100%; height: 430px; }
+  #wrap #donateArea .bg_box { width: 100%; height: 430px; max-width: 750px; margin: 0 auto; }
   #wrap #donateArea .txt_box { width: 672px; background-color: #fff; margin: -80px auto 0; box-shadow: 0px 7px 9px rgba(186, 180, 152, 0.3); padding: 90px 0; }
   #wrap #donateArea .txt_box .underline { margin: 0 0 12px; }
   #wrap #donateArea .txt_box .underline strong { font-size: 46px; }
@@ -526,16 +540,16 @@ header > div.donate_btn { float: right; }
   #wrap #donateArea .txt_box p { margin: 40px 0 0; font-size: 24px; }
   #wrap #donateArea .txt_box .donate_btn { margin: 64px 0 0; }
   #wrap #campaigns { background-color: #fdfbf1; }
-  #wrap #campaigns .txt_box { background: url(../../images/main/campaigns_bg.jpg) 26px 0px no-repeat; background-size: 664px; height: 438px; margin: 0 0 0 40px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 50px 0 0; }
+  #wrap #campaigns .txt_box { width: 100%; height: 438px; max-width: 680px; background: url(../../images/main/campaigns_bg.jpg) 26px 0px no-repeat; background-size: 664px; margin: 0 auto 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 50px 0 0; }
   #wrap #campaigns .txt_box .underline { margin: 0 0 30px; }
   #wrap #campaigns .txt_box .underline strong { font-size: 30px; }
-  #wrap #campaigns .txt_box h3 { font-size: 40px; }
+  #wrap #campaigns .txt_box h3 { font-size: 40px; letter-spacing: -3px; }
   #wrap #campaigns .campaigns_swiper_bg { background-color: #fff; }
   #wrap #campaigns .campaigns_swiper_bg .campaigns_swiper { position: relative; left: 0; top: -130px; width: 670px; padding: 0 0 100px; }
   #wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide { width: 324px; margin: 0 14px 0; }
   #wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide a .img_box { position: relative; margin: 0 0 30px; }
   #wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide a .img_box .label_box { position: absolute; bottom: -12px; font-size: 22px; padding: 10px 14px; }
-  #wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide a h4 { font-size: 28px; }
+  #wrap #campaigns .campaigns_swiper_bg .campaigns_swiper .swiper-slide a h4 { font-size: 28px; letter-spacing: -3px; height: 75px; }
   .page_btn { height: 220px; bottom: 120px; right: 40px; z-index: 100; }
   .page_btn button { display: block; width: 90px; height: 90px; background-color: rgba(0, 0, 0, 0.2); font-size: 0; border-radius: 45px; margin: 0 0 20px; }
   .page_btn .prev_con:after { display: block; content: " "; width: 16px; height: 16px; border-top: 2px solid #fff; border-right: 2px solid #fff; margin: 8px auto 0; transform: rotate(-45deg); }

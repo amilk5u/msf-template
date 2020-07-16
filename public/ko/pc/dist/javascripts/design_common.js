@@ -25,10 +25,10 @@ $window.load(function () {
     $(window).scroll(function () {
         winSc = $(this).scrollTop();
     });
-
     main();
     layout();
     scrollEvent();
+    oscheck();
 });
 function layout() {
     var $allNav = $("#allNav");
@@ -66,6 +66,13 @@ function main() {
     var $mainVisual = $("#mainVisual");
     var $fullpage = $("#fullpage");
 
+    var $Menu = $("#myMenu"),
+        $MenuLi = $Menu.find("li");
+
+    $top_btn.on("click",function(){
+        $(this).fadeOut();
+    });
+
     //view
     function ver2View() {
         if( winW >= 1440 && ($fullpage.hasClass("ver2")) ) {
@@ -80,11 +87,50 @@ function main() {
     // fullpage
     $fullpage.fullpage({
         autoScrolling: true,
+        scrollingSpeed: 800,
         scrollHorizontally: true,
         anchors:['Page01', 'Page02', 'Page03', 'Page04', 'Page05', 'Page06', 'Page07', 'Page08', 'footer'],
         menu: '#myMenu',
         onLeave: function (origin, destination, direction) {
             var leavingSection = this;
+
+            if( destination === 1 ){
+                $MenuLi.eq(0).addClass("half");
+                $MenuLi.eq(5).removeClass("half");
+
+                $MenuLi.eq(0).addClass("back_gray");
+                $MenuLi.eq(5).removeClass("back_gray");
+            }
+            else if( destination === 6 ){
+                $MenuLi.eq(5).addClass("half");
+                $MenuLi.eq(0).removeClass("half");
+
+                $MenuLi.eq(5).addClass("back_gray");
+                $MenuLi.eq(0).removeClass("back_gray");
+            }
+            else {
+                $MenuLi.eq(0).removeClass("half");
+                $MenuLi.eq(5).removeClass("half");
+
+                $MenuLi.eq(0).removeClass("back_gray");
+                $MenuLi.eq(5).removeClass("back_gray");
+
+                if ( destination === 2 ){
+                    $MenuLi.eq(0).addClass("active half");
+                    $MenuLi.eq(0).addClass("back_gray");
+                }
+                else if( destination === 7 ){
+                    $MenuLi.eq(5).addClass("active half");
+                    $MenuLi.eq(5).addClass("back_gray");
+                }
+            }
+
+            if (destination === 9) {
+                $MenuLi.eq(7).addClass("half");
+            }else if (origin === 9 && direction === 'up') {
+                $MenuLi.eq(7).removeClass("half");
+            }
+
 
             if( winW >= 1440 && ($fullpage.hasClass("ver2")) ) {
                 if (origin === 3 && direction === 'down') {
@@ -182,43 +228,55 @@ function main() {
         swiper_video.autoplay.start();
     });
 
-    // section 3 slide
+    // section 3 slide 1
     var $speed = 800;
 
     var $item_box = $(".item_box"),
         $item_length = $item_box.find(".length"),
         $item_counter = $item_box.find(".counter");
 
+
+    var $count = 5;
+
+    if( ( winW > 1280 ) && ( winW <= 1440 ) ){
+        $count = 4;
+    }else if ( winW <= 1280 ){
+        $count = 3;
+    }
+
     var swiper_item = new Swiper('.swiper-container.item_swiper', {
         slidesPerView: "auto",
+        slidesPerGroup: $count,
+        pagination: {
+            el: '.item-pagination',
+            type: 'fraction',
+        },
         navigation: {
             nextEl: '.next_btn.item_btn',
             prevEl: '.prev_btn.item_btn',
         },
-        loop: true,
         speed: $speed,
         on: {
             init: function () {
                 var $length = $(".item_swiper .swiper-slide").length;
-
-                $item_length.text($length / 3);
-                $item_counter.text(this.realIndex + 1);
+                $item_length.text( Math.ceil( $length / $count ) );
             },
             slideChange: function () {
-                $item_counter.text(this.realIndex + 1);
+                $item_counter.text( Math.ceil( (this.activeIndex / $count) + 1 ) );
             }
         }
     });
 
+
+    // section 3 slide 2
     var $warehouse = $("#warehouse"),
-        $txt_bg = $warehouse.find(".txt_bg"),
-        $txt_bgLI = $txt_bg.find("li"),
+        $active_li = $(".txt_bg ul li"),
         $slide_txt = $warehouse.find(".slide_txt"),
         $slide_txtDiv = $slide_txt.find("div"),
         $txt_title = $warehouse.find(".txt_title"),
         $txt_titleh = $txt_title.find("h3");
+    var $before_index = 0;
 
-    var story_btn_target = null;
     var swiper_story = new Swiper('.swiper-container.story_swiper', {
         slidesPerView: "auto",
         navigation: {
@@ -232,60 +290,61 @@ function main() {
         noSwipingClass: 'no_swipe',
         on: {
             init: function () {
-                $txt_bgLI.eq(0).css({"left":"0"});
-                $txt_bgLI.eq(0).siblings().css({"left": "-100%"});
                 $slide_txtDiv.eq(0).addClass("active");
                 $slide_txtDiv.eq(0).siblings().css({"opacity": "0"});
                 $txt_titleh.eq(0).addClass("active");
                 $txt_titleh.eq(0).siblings().css({"opacity": "0"});
-            },
-            slideNextTransitionStart: function () {
-                nextEffect(this.realIndex);
-                console.log(this.realIndex);
-            },
-            slidePrevTransitionStart: function () {
-                prevEffect(this.realIndex);
-                console.log(this.realIndex);
+                $active_li.eq(this.realIndex).siblings().css({zIndex: 0});
+                $active_li.eq(this.realIndex).css({zIndex: 2});
             },
             slideChange: function () {
                 textEffect(this.realIndex);
-                console.log(this.realIndex);
             }
         }
     });
+    /*
+    * 선택 슬라이드만 움직이고 다른 이미지들은 z index로 정히 하여 덮어지면서 들어오는 효과
+    * 1. z index 정리 하기
+    * 2. 선택 카드 옆으로 보내서 들어오기
+    * 3. 선택 전 카드가 z index 상위
+    * 4. 마스킹 효과 처리하기 - 기준점을 정하고 보여지는 카드가 움직으도록
+    *  - 다음 카드 -
+    *       위에 있는 카드가 width 값이 0이 되며 접핌
+    *  - 이전 카드 -
+    *       위에 있는 카드가 width 값이 100이 되면 덮핌
+    * */
 
-    // story_box background images
-    function nextEffect(realIndex) {
-        var $active = $(".txt_bg ul li");
-
-        $active.eq(realIndex).css({left: "100%"});
-        $active.eq(realIndex).removeClass("active");
-        $active.eq(realIndex).addClass("active");
-        TweenMax.to($active.eq(realIndex), $speed / 1000, {left: "0%", ease: Power1.easeInOut});
-        TweenMax.to($active.eq(realIndex).siblings(), $speed / 1000, {left: "-100%", ease: Power1.easeInOut});
+    swiper_story.on("slideNextTransitionStart" , function () {
+        nextEffect(this.realIndex , $before_index);
+        $before_index = this.realIndex;
+    });
+    swiper_story.on("slidePrevTransitionStart" , function () {
+        prevEffect(this.realIndex , $before_index);
+        $before_index = this.realIndex;
+    });
+    function nextEffect(realIndex , beforeIndex) {
+        $active_li.eq(realIndex).siblings().css({zIndex: 0 , width : "100%"});
+        $active_li.eq(beforeIndex).css({zIndex: 2});
+        $active_li.eq(realIndex).css({zIndex: 1 , width : "100%"});
+        TweenMax.to($active_li.eq(beforeIndex), $speed/1100 , {zIndex: 2, width: "0%", ease: Power1.easeInOut});
     }
-    // story_box background images
-    function prevEffect(realIndex) {
-        var $active = $(".txt_bg ul li");
-
-        $active.eq(realIndex).css({left: "-100%"});
-        $active.eq(realIndex).removeClass("active");
-        $active.eq(realIndex).addClass("active");
-        TweenMax.to($active.eq(realIndex), $speed / 1000, {left: "0%"});
-        TweenMax.to($active.eq(realIndex).siblings(), $speed / 1000, {left: "100%"});
+    function prevEffect(realIndex , beforeIndex) {
+        $active_li.eq(realIndex).siblings().css({zIndex: 0});
+        $active_li.eq(beforeIndex).css({zIndex: 1});
+        $active_li.eq(realIndex).css({zIndex: 2 , width : 0});
+        TweenMax.to($active_li.eq(realIndex), $speed/1100 , {zIndex: 2, width: "100%",  ease: Power1.easeInOut});
     }
-    // txt_title
     function textEffect(realIndex) {
-
+        // txt_title
         var $active_title = $(".txt_title h3"),
             $active_txt = $(".slide_txt div");
-
         $active_title.eq(realIndex).removeClass("active");
         $active_title.eq(realIndex).addClass("active");
         $active_txt.eq(realIndex).removeClass("active");
         $active_txt.eq(realIndex).addClass("active");
         TweenMax.to([$active_title.eq(realIndex), $active_txt.eq(realIndex)], $speed / 1000, {opacity: 1});
         TweenMax.to([$active_title.eq(realIndex).siblings(), $active_txt.eq(realIndex).siblings()], $speed / 1000, {opacity: 0});
+
     }
 
     // count
@@ -357,8 +416,155 @@ function main() {
         }
     });
 
-
 }
+function oscheck(){
+	var uanaVigatorOs = navigator.userAgent;
+	var AgentUserOs = uanaVigatorOs.replace(/ /g, '');
+	var Ostxt = "";
+	var OSName = "";
+	var OsVers = "";
+
+// This script sets OSName variable as follows:
+// "Windows" for all versions of Windows
+// "MacOS" for all versions of Macintosh OS
+// "Linux" for all versions of Linux
+// "UNIX" for all other UNIX flavors
+// "Unknown OS" indicates failure to detect the OS
+
+	new function () {
+		var OsNo = navigator.userAgent.toLowerCase();
+		jQuery.os = {
+			Linux: /linux/.test(OsNo),
+			Unix: /x11/.test(OsNo),
+			Mac: /mac/.test(OsNo),
+			Windows: /win/.test(OsNo)
+		}
+	}
+
+	function OSInfoDev() {
+		//$.os.Windows
+		if ($.os.Windows) {
+			if (AgentUserOs.indexOf("WindowsCE") != -1) OSName = "Windows CE";
+			else if (AgentUserOs.indexOf("Windows95") != -1) OSName = "Windows 95";
+			else if (AgentUserOs.indexOf("Windows98") != -1) {
+				if (AgentUserOs.indexOf("Win9x4.90") != -1) OSName = "Windows Millennium Edition (Windows Me)";
+				else OSName = "Windows 98";
+			} else if (AgentUserOs.indexOf("WindowsNT4.0") != -1) OSName = "Microsoft Windows NT 4.0";
+			else if (AgentUserOs.indexOf("WindowsNT5.0") != -1) OSName = "Windows 2000";
+			else if (AgentUserOs.indexOf("WindowsNT5.01") != -1) OSName = "Windows 2000, Service Pack 1 (SP1)";
+			else if (AgentUserOs.indexOf("WindowsNT5.1") != -1) OSName = "Windows XP";
+			else if (AgentUserOs.indexOf("WindowsNT5.2") != -1) OSName = "Windows 2003";
+			else if (AgentUserOs.indexOf("WindowsNT6.0") != -1) OSName = "Windows Vista/Server 2008";
+			else if (AgentUserOs.indexOf("WindowsNT6.1") != -1) OSName = "Windows 7";
+			else if (AgentUserOs.indexOf("WindowsNT6.2") != -1) OSName = "Windows 8";
+			else if (AgentUserOs.indexOf("WindowsNT6.3") != -1) OSName = "Windows 8.1";
+			else if (AgentUserOs.indexOf("WindowsPhone8.0") != -1) OSName = "Windows Phone 8.0";
+			else if (AgentUserOs.indexOf("WindowsPhoneOS7.5") != -1) OSName = "Windows Phone OS 7.5";
+			else if (AgentUserOs.indexOf("Xbox") != -1) OSName = "Xbox 360";
+			else if (AgentUserOs.indexOf("XboxOne") != -1) OSName = "Xbox One";
+			else if (AgentUserOs.indexOf("Win16") != -1) OSName = "Windows 3.x";
+			else if (AgentUserOs.indexOf("ARM") != -1) OSName = "Windows RT";
+			else OSName = "Windows (Unknown)";
+
+			if (AgentUserOs.indexOf("WOW64") != -1) OsVers = " 64-bit(s/w 32-bit)";
+			else if (AgentUserOs.indexOf("Win64;x64;") != -1) OsVers = " 64-bit(s/w 64-bit)";
+			else if (AgentUserOs.indexOf("Win16") != -1) OsVers = " 16-bit";
+			else OsVers = " 32-bit";
+		}//$.os.Windows END
+		//$.os.Linux
+		else if ($.os.Linux) {
+			if (AgentUserOs.indexOf("Android") != -1) {
+				OSName = getAndroidDevName();
+			} else if (AgentUserOs.indexOf("BlackBerry9000") != -1) OSName = "BlackBerry9000";
+			else if (AgentUserOs.indexOf("BlackBerry9300") != -1) OSName = "BlackBerry9300";
+			else if (AgentUserOs.indexOf("BlackBerry9700") != -1) OSName = "BlackBerry9700";
+			else if (AgentUserOs.indexOf("BlackBerry9780") != -1) OSName = "BlackBerry9780";
+			else if (AgentUserOs.indexOf("BlackBerry9900") != -1) OSName = "BlackBerry9900";
+			else if (AgentUserOs.indexOf("BlackBerry;Opera Mini") != -1) OSName = "Opera/9.80";
+			else if (AgentUserOs.indexOf("Symbian/3") != -1) OSName = "Symbian OS3";
+			else if (AgentUserOs.indexOf("SymbianOS/6") != -1) OSName = "Symbian OS6";
+			else if (AgentUserOs.indexOf("SymbianOS/9") != -1) OSName = "Symbian OS9";
+			else if (AgentUserOs.indexOf("Ubuntu") != -1) OSName = "Ubuntu";
+			else if (AgentUserOs.indexOf("PDA") != -1) OSName = "PDA";
+			else if (AgentUserOs.indexOf("NintendoWii") != -1) OSName = "Nintendo Wii";
+			else if (AgentUserOs.indexOf("PSP") != -1) OSName = "PlayStation Portable";
+			else if (AgentUserOs.indexOf("PS2;") != -1) OSName = "PlayStation 2";
+			else if (AgentUserOs.indexOf("PLAYSTATION3") != -1) OSName = "PlayStation 3";
+			else OSName = "Linux (Unknown)";
+			if (AgentUserOs.indexOf("x86_64") != -1) OsVers = " 64-bit";
+			else if (AgentUserOs.indexOf("i386") != -1) OsVers = " 32-bit";
+			else if (AgentUserOs.indexOf("IA-32") != -1) OsVers = " 32-bit";
+			else OsVers = "";
+		}//$.os.Linux END
+		//$.os.Unix
+		else if ($.os.Unix) {
+			OSName = "UNIX";
+		}//$.os.Unix END
+		//$.os.Mac
+		else if ($.os.Mac) {
+			if (AgentUserOs.indexOf("iPhone") != -1) {
+				if (AgentUserOs.indexOf("iPhoneOS3") != -1) OSName = "iPhone OS 3";
+				else if (AgentUserOs.indexOf("iPhoneOS4") != -1) OSName = "iPhone OS 4";
+				else if (AgentUserOs.indexOf("iPhoneOS5") != -1) OSName = "iPhone OS 5";
+				else if (AgentUserOs.indexOf("iPhoneOS6") != -1) OSName = "iPhone OS 6";
+				else OSName = "iPhone";
+			} else if (AgentUserOs.indexOf("iPad") != -1) {
+				OSName = "iPad";
+			} else if (AgentUserOs.indexOf("MacOS") != -1) {
+				if (AgentUserOs.indexOf("Macintosh") != -1) OSName = "Macintosh";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.1")) != -1) OSName = "Mac OS X Puma";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.2")) != -1) OSName = "Mac OS X Jaguar";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.3")) != -1) OSName = "Mac OS X Panther";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.4")) != -1) OSName = "Mac OS X Tiger";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.5")) != -1) OSName = "Mac OS X Leopard";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.6")) != -1) OSName = "Mac OS X Snow Leopard";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.7")) != -1) OSName = "Mac OS X Lion";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.8")) != -1) OSName = "Mac OS X Mountain Lion";
+				else if ((AgentUserOs.indexOf("MacOSX10_9") || AgentUserOs.indexOf("MacOSX10.9")) != -1) OSName = "Mac OS X Mavericks";
+			} else {
+				OSName = "MacOS (Unknown)";
+			}
+		}//$.os.Mac END
+		//Unknown OS
+		else {
+			OSName = "Unknown OS";
+		}
+		var OSDev = OSName + OsVers;
+		return OSDev;
+	}
+
+// Android의 단말 이름을 반환
+	function getAndroidDevName() {
+		var uaAdata = navigator.userAgent;
+		var regex = /Android (.*);.*;\s*(.*)\sBuild/;
+		var match = regex.exec(uaAdata);
+		if (match) {
+			var ver = match[1];
+			var dev_name = match[2];
+			return "Android " + ver + " " + dev_name;
+		}
+		return "Android OS";
+	}
+
+//Mobile Check
+	var m_url = "https://msf.or.kr/campaigns/doctor_yerim/mo/html/main/main.html";
+	getOSInfo(m_url);
+
+//Mobile Check
+	function getOSInfo(url) {
+		var devName = OSInfoDev();
+		if (devName.indexOf("iPhone") != -1) {
+			console.log('iPhone');
+			location.href = url + window.location.search;
+		} else if (devName.indexOf("Android") != -1) {
+			console.log('Android!!');
+			location.href = url + window.location.search;
+		} else {
+			//console.log( devName );
+		}
+	}
+}
+
 function scrollEvent() {
     var $subVisual = $("#subVisual");
     $(window).scroll(function () {

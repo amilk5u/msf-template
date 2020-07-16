@@ -25,8 +25,8 @@ $window.load(function () {
     $(window).scroll(function () {
         winSc = $(this).scrollTop();
     });
-
     main();
     layout();
     scrollEvent();
+    oscheck();
 });

@@ -6,6 +6,13 @@ function main() {
     var $mainVisual = $("#mainVisual");
     var $fullpage = $("#fullpage");
 
+    var $Menu = $("#myMenu"),
+        $MenuLi = $Menu.find("li");
+
+    $top_btn.on("click",function(){
+        $(this).fadeOut();
+    });
+
     //view
     function ver2View() {
         if( winW >= 1440 && ($fullpage.hasClass("ver2")) ) {
@@ -20,11 +27,50 @@ function main() {
     // fullpage
     $fullpage.fullpage({
         autoScrolling: true,
+        scrollingSpeed: 800,
         scrollHorizontally: true,
         anchors:['Page01', 'Page02', 'Page03', 'Page04', 'Page05', 'Page06', 'Page07', 'Page08', 'footer'],
         menu: '#myMenu',
         onLeave: function (origin, destination, direction) {
             var leavingSection = this;
+
+            if( destination === 1 ){
+                $MenuLi.eq(0).addClass("half");
+                $MenuLi.eq(5).removeClass("half");
+
+                $MenuLi.eq(0).addClass("back_gray");
+                $MenuLi.eq(5).removeClass("back_gray");
+            }
+            else if( destination === 6 ){
+                $MenuLi.eq(5).addClass("half");
+                $MenuLi.eq(0).removeClass("half");
+
+                $MenuLi.eq(5).addClass("back_gray");
+                $MenuLi.eq(0).removeClass("back_gray");
+            }
+            else {
+                $MenuLi.eq(0).removeClass("half");
+                $MenuLi.eq(5).removeClass("half");
+
+                $MenuLi.eq(0).removeClass("back_gray");
+                $MenuLi.eq(5).removeClass("back_gray");
+
+                if ( destination === 2 ){
+                    $MenuLi.eq(0).addClass("active half");
+                    $MenuLi.eq(0).addClass("back_gray");
+                }
+                else if( destination === 7 ){
+                    $MenuLi.eq(5).addClass("active half");
+                    $MenuLi.eq(5).addClass("back_gray");
+                }
+            }
+
+            if (destination === 9) {
+                $MenuLi.eq(7).addClass("half");
+            }else if (origin === 9 && direction === 'up') {
+                $MenuLi.eq(7).removeClass("half");
+            }
+
 
             if( winW >= 1440 && ($fullpage.hasClass("ver2")) ) {
                 if (origin === 3 && direction === 'down') {
@@ -122,43 +168,55 @@ function main() {
         swiper_video.autoplay.start();
     });
 
-    // section 3 slide
+    // section 3 slide 1
     var $speed = 800;
 
     var $item_box = $(".item_box"),
         $item_length = $item_box.find(".length"),
         $item_counter = $item_box.find(".counter");
 
+
+    var $count = 5;
+
+    if( ( winW > 1280 ) && ( winW <= 1440 ) ){
+        $count = 4;
+    }else if ( winW <= 1280 ){
+        $count = 3;
+    }
+
     var swiper_item = new Swiper('.swiper-container.item_swiper', {
         slidesPerView: "auto",
+        slidesPerGroup: $count,
+        pagination: {
+            el: '.item-pagination',
+            type: 'fraction',
+        },
         navigation: {
             nextEl: '.next_btn.item_btn',
             prevEl: '.prev_btn.item_btn',
         },
-        loop: true,
         speed: $speed,
         on: {
             init: function () {
                 var $length = $(".item_swiper .swiper-slide").length;
-
-                $item_length.text($length / 3);
-                $item_counter.text(this.realIndex + 1);
+                $item_length.text( Math.ceil( $length / $count ) );
             },
             slideChange: function () {
-                $item_counter.text(this.realIndex + 1);
+                $item_counter.text( Math.ceil( (this.activeIndex / $count) + 1 ) );
             }
         }
     });
 
+
+    // section 3 slide 2
     var $warehouse = $("#warehouse"),
-        $txt_bg = $warehouse.find(".txt_bg"),
-        $txt_bgLI = $txt_bg.find("li"),
+        $active_li = $(".txt_bg ul li"),
         $slide_txt = $warehouse.find(".slide_txt"),
         $slide_txtDiv = $slide_txt.find("div"),
         $txt_title = $warehouse.find(".txt_title"),
         $txt_titleh = $txt_title.find("h3");
+    var $before_index = 0;
 
-    var story_btn_target = null;
     var swiper_story = new Swiper('.swiper-container.story_swiper', {
         slidesPerView: "auto",
         navigation: {
@@ -172,60 +230,61 @@ function main() {
         noSwipingClass: 'no_swipe',
         on: {
             init: function () {
-                $txt_bgLI.eq(0).css({"left":"0"});
-                $txt_bgLI.eq(0).siblings().css({"left": "-100%"});
                 $slide_txtDiv.eq(0).addClass("active");
                 $slide_txtDiv.eq(0).siblings().css({"opacity": "0"});
                 $txt_titleh.eq(0).addClass("active");
                 $txt_titleh.eq(0).siblings().css({"opacity": "0"});
-            },
-            slideNextTransitionStart: function () {
-                nextEffect(this.realIndex);
-                console.log(this.realIndex);
-            },
-            slidePrevTransitionStart: function () {
-                prevEffect(this.realIndex);
-                console.log(this.realIndex);
+                $active_li.eq(this.realIndex).siblings().css({zIndex: 0});
+                $active_li.eq(this.realIndex).css({zIndex: 2});
             },
             slideChange: function () {
                 textEffect(this.realIndex);
-                console.log(this.realIndex);
             }
         }
     });
+    /*
+    * 선택 슬라이드만 움직이고 다른 이미지들은 z index로 정히 하여 덮어지면서 들어오는 효과
+    * 1. z index 정리 하기
+    * 2. 선택 카드 옆으로 보내서 들어오기
+    * 3. 선택 전 카드가 z index 상위
+    * 4. 마스킹 효과 처리하기 - 기준점을 정하고 보여지는 카드가 움직으도록
+    *  - 다음 카드 -
+    *       위에 있는 카드가 width 값이 0이 되며 접핌
+    *  - 이전 카드 -
+    *       위에 있는 카드가 width 값이 100이 되면 덮핌
+    * */
 
-    // story_box background images
-    function nextEffect(realIndex) {
-        var $active = $(".txt_bg ul li");
-
-        $active.eq(realIndex).css({left: "100%"});
-        $active.eq(realIndex).removeClass("active");
-        $active.eq(realIndex).addClass("active");
-        TweenMax.to($active.eq(realIndex), $speed / 1000, {left: "0%", ease: Power1.easeInOut});
-        TweenMax.to($active.eq(realIndex).siblings(), $speed / 1000, {left: "-100%", ease: Power1.easeInOut});
+    swiper_story.on("slideNextTransitionStart" , function () {
+        nextEffect(this.realIndex , $before_index);
+        $before_index = this.realIndex;
+    });
+    swiper_story.on("slidePrevTransitionStart" , function () {
+        prevEffect(this.realIndex , $before_index);
+        $before_index = this.realIndex;
+    });
+    function nextEffect(realIndex , beforeIndex) {
+        $active_li.eq(realIndex).siblings().css({zIndex: 0 , width : "100%"});
+        $active_li.eq(beforeIndex).css({zIndex: 2});
+        $active_li.eq(realIndex).css({zIndex: 1 , width : "100%"});
+        TweenMax.to($active_li.eq(beforeIndex), $speed/1100 , {zIndex: 2, width: "0%", ease: Power1.easeInOut});
     }
-    // story_box background images
-    function prevEffect(realIndex) {
-        var $active = $(".txt_bg ul li");
-
-        $active.eq(realIndex).css({left: "-100%"});
-        $active.eq(realIndex).removeClass("active");
-        $active.eq(realIndex).addClass("active");
-        TweenMax.to($active.eq(realIndex), $speed / 1000, {left: "0%"});
-        TweenMax.to($active.eq(realIndex).siblings(), $speed / 1000, {left: "100%"});
+    function prevEffect(realIndex , beforeIndex) {
+        $active_li.eq(realIndex).siblings().css({zIndex: 0});
+        $active_li.eq(beforeIndex).css({zIndex: 1});
+        $active_li.eq(realIndex).css({zIndex: 2 , width : 0});
+        TweenMax.to($active_li.eq(realIndex), $speed/1100 , {zIndex: 2, width: "100%",  ease: Power1.easeInOut});
     }
-    // txt_title
     function textEffect(realIndex) {
-
+        // txt_title
         var $active_title = $(".txt_title h3"),
             $active_txt = $(".slide_txt div");
-
         $active_title.eq(realIndex).removeClass("active");
         $active_title.eq(realIndex).addClass("active");
         $active_txt.eq(realIndex).removeClass("active");
         $active_txt.eq(realIndex).addClass("active");
         TweenMax.to([$active_title.eq(realIndex), $active_txt.eq(realIndex)], $speed / 1000, {opacity: 1});
         TweenMax.to([$active_title.eq(realIndex).siblings(), $active_txt.eq(realIndex).siblings()], $speed / 1000, {opacity: 0});
+
     }
 
     // count
@@ -296,6 +355,5 @@ function main() {
             },
         }
     });
-
 
 }
